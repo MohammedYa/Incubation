@@ -1,0 +1,38 @@
+
+
+<section class="login">
+    
+    <div class="layer"></div>
+   
+    <div class="rightLogin">
+        <div class="count">
+            <div class="img">
+            <img src="../../assets/imgs/login/logo color 1.png" alt="">
+            </div>
+            <div class="forms">
+                <form [formGroup]="LoginForm" (ngSubmit)="supmitLoginForm(LoginForm)" >
+                    <div >
+                        <input formControlName="email" class="email"placeholder="Email" type="email">
+                        <div  *ngIf="LoginForm.controls['email'].errors&&LoginForm.controls['email'].touched "class="emailvalidtion">
+                            <p><span>*</span> Email is not valid </p>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <input formControlName="password" class="pass"placeholder="password" type="password">
+                        <div  *ngIf="LoginForm.controls['password'].errors&&LoginForm.controls['password'].touched " class="emailvalidtion">
+                            <p *ngIf="LoginForm.controls['password'].errors['required']"> <span>*</span> Email is not valid </p>
+                            <p *ngIf="LoginForm.controls['password'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 6 char  </p>
+
+                        </div>
+                    </div>
+                    
+                    <a routerLink="/forget" class="forget">Forget password ?</a>
+                    <button class="btn">Login</button>
+                    <p> Don’t have an account ?  <span>  <a routerLink="/register"> Sign up</a> </span></p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>

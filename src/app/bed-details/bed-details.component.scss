@@ -1,0 +1,34 @@
+section {
+    margin: 120px;
+  }
+  p {
+    color: #A4A4A4;
+  }
+  .blu {
+    width: 216px;
+    height: 23px;
+    left: 88px;
+    top: 191px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 42px;
+    color: #01909A;
+  }
+  ul {
+    list-style: none;
+    li {
+      color: #A4A4A4;
+    }
+  }
+  
+  ul li::before {
+    content: "\2022";
+    color:#01909A;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  

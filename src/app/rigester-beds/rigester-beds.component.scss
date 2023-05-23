@@ -1,0 +1,165 @@
+
+.login{
+    height: 100vh;   
+   background-image: url("../../assets/imgs/login/doctor.png");
+   background-size: cover;
+   background-position: center center;
+   inset: 0;
+   position: relative;
+   }
+   .layer{
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(233.06deg, rgba(0, 255, 239, 0.31) 0%, rgba(1, 144, 154, 0.31) 100%);
+   }
+   .rightLogin{
+   position: absolute;
+   overflow-y: scroll;
+   top: 0%;
+   right: 0%;
+   bottom: 0%;
+   width: 580px;
+   background-color: #fff;
+   
+   
+   }   
+   .rightLogin::-webkit-scrollbar {
+   width: 1em;
+   }
+   
+   .rightLogin::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   }
+   
+   .rightLogin::-webkit-scrollbar-thumb {
+   background: linear-gradient(184.18deg, #00FFEF 0%, #01909A 100%);
+   border-radius: 21px;
+   outline: 1px solid rgb(45, 192, 192);
+   }
+   .headerDoc{
+       color: #00FFEF;
+       font-weight: 700;
+       line-height: 48px;
+       display: flex;
+       justify-content: space-around;
+       text-align: center;
+       margin-top: 120px;
+       i{
+       font-weight: 700;
+       line-height: 48px;
+       font-size: 40px;
+       cursor: pointer;
+       }
+       h3{
+       font-weight: 700;
+       line-height: 48px;
+       font-size: 2.75rem;
+   
+       }
+   }
+   .forms{
+       
+       form{
+       text-align: -webkit-center;
+       }
+       .nameCollection{
+           
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   div{
+   width: fit-content;
+   }
+   .name{
+   width: 223px;
+   height: 46px;
+   }
+
+
+   }
+   .email,.pass,.name{
+   padding: 12px;
+   width: 188px;
+   height: 47px;
+   background: #FFFFFF;
+   border: 1px solid #A4A4A4 ;
+   color: #00FFEF !important;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 30px;
+   margin: 10px 0px;
+   }
+   .avilable{
+    
+    background-color: #93BC39;;
+   }
+   .unavilable{
+    background-color:#EE3E54;
+
+   }
+   .email:focus,.pass:focus,.name:focus{
+   
+   outline: none !important;
+   border-color: #00FFEF;
+   }
+   .email:focus::placeholder,.pass:focus::placeholder,.name:focus::placeholder{
+   color: #00FFEF;
+   
+   }
+   .email::placeholder,.pass::placeholder,.name::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #A4A4A4;
+   opacity: 1; /* Firefox */
+   }
+   .btn{
+   color: #fff;
+   display: block;
+   width: 215px;
+   height: 47px;
+   background: linear-gradient(90deg, #00FFEF -49.62%, #01909A 100%);
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 30px;
+   font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 30px;
+   margin: 30px 0px;
+   
+   }
+   }
+   .collection{
+       width: fit-content;
+       margin: auto auto 50px auto ;
+     border: #00FFEF 1px solid; 
+     border-radius: 30px !important;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    
+   }
+   .docHeader{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 21px 25px;
+       width: 482px;
+       height: 47px;
+       cursor: pointer;
+       color: #00FFEF !important;
+       font-size: 28px;
+   }
+   .infoDoctor{
+       padding: 10px;
+       .inputCollection{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .tittle{
+
+        width: 187px;
+        height: 35px;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 33px;
+        color: #A4A4A4;
+
+        }
+    }
+   }

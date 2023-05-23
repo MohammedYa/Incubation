@@ -1,0 +1,67 @@
+<section class="login">
+    <div class="pictur ">
+        <div class="layer"></div>
+    </div>
+    <div class="rightLogin">
+        <div class="count">
+            <div class="m-auto ">
+            <img src="../../assets/imgs/login/logo color 1.png" alt="">
+            </div>
+            <div class="forms">
+                <form [formGroup]="RegisterIncubationForm"  (ngSubmit)="supmitRegisterIncubation(RegisterIncubationForm)" >
+                   
+                    <div >
+                        <input formControlName="displayName" class="name"placeholder="Full Name" type="text">
+                        <div  *ngIf="RegisterIncubationForm.controls['displayName'].errors&&RegisterIncubationForm.controls['displayName'].touched " class="emailvalidtion">
+                            <p *ngIf="RegisterIncubationForm.controls['displayName'].errors['minlength']"> <span>*</span> FullName you must contain min length 3 </p>
+                            <p *ngIf="RegisterIncubationForm.controls['displayName'].errors['required']"> <span>*</span> FullName is required </p>
+                            <p *ngIf="RegisterIncubationForm.controls['displayName'].errors['maxlength']"><span>*</span> FullName you must contain Max length 20  </p>
+
+                        </div>
+                    </div>  
+
+                    <div>
+                        <input formControlName="phoneNumber" class="pass"placeholder="Phone Number" type="text">
+                        <div  *ngIf="RegisterIncubationForm.controls['phoneNumber'].errors&&RegisterIncubationForm.controls['phoneNumber'].touched " class="emailvalidtion">
+                            <p *ngIf="RegisterIncubationForm.controls['phoneNumber'].errors['required']"> <span>*</span> Phone is required </p>
+                            <p *ngIf="RegisterIncubationForm.controls['phoneNumber'].errors['pattern']"><span>*</span>password is not valid   </p>
+
+                        </div>
+                    </div>
+                   
+                    <div>
+                        <input formControlName="city" class="pass"placeholder="City" type="text">
+                        <div  *ngIf="RegisterIncubationForm.controls['city'].errors&&RegisterIncubationForm.controls['city'].touched " class="emailvalidtion">
+                            <p *ngIf="RegisterIncubationForm.controls['city'].errors['minlength']"> <span>*</span> city you must contain min length 3 </p>
+                            <p *ngIf="RegisterIncubationForm.controls['city'].errors['required']"> <span>*</span> city is required </p>
+                            <p *ngIf="RegisterIncubationForm.controls['city'].errors['maxlength']"><span>*</span> city you must contain Max length 20  </p>
+
+                        </div>
+                    </div>
+                   
+                    <div >
+                        <input formControlName="email" class="email"placeholder="Email" type="email">
+                        <div  *ngIf="RegisterIncubationForm.controls['email'].errors&&RegisterIncubationForm.controls['email'].touched " class="emailvalidtion">
+                            <p *ngIf="RegisterIncubationForm.controls['email'].errors['email']"> <span>*</span> Email is not valid </p>
+
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <input formControlName="password" class="pass"placeholder="password" type="password">
+                        <div  *ngIf="RegisterIncubationForm.controls['password'].errors&&RegisterIncubationForm.controls['password'].touched " class="emailvalidtion">
+                            <p *ngIf="RegisterIncubationForm.controls['password'].errors['required']"> <span>*</span> password is not valid </p>
+                            <p *ngIf="RegisterIncubationForm.controls['password'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
+
+                        </div>
+                    </div>
+                   
+                    <button class="btn">Next</button>
+                    <p> Already have an account ?<span>  <a routerLink="/login"> Login </a> </span></p>
+                </form>
+            </div>
+        </div>
+       
+
+    </div>
+</section>

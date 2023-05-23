@@ -1,0 +1,64 @@
+<section class="login">
+
+    <div class="layer"></div>
+
+    <div class="rightLogin">
+        <div class="headerDoc">
+            <h3 class="">Doctors</h3>
+            <i id='add' class="fa-solid fa-plus " (click)="addDoc()"></i>
+        </div>
+        <div class="doctors mt-5">
+
+
+
+            <div class="fields">
+
+
+                <div class="forms">
+                    <form [formGroup]="DoctorForm" (ngSubmit)="supmitDoctorForm(DoctorForm)">
+                      
+                        <div *ngFor="let Doc of members?.controls ; let i=index" id="doctors" formArrayName="MoreDoc">
+
+
+                            <div [formGroupName]="i" class="collection">
+
+
+                                <div id="drop" class="docHeader">
+                                    <h3>Doctor {{i + 1}} </h3><i id="down" class="fa-sharp fa-solid fa-chevron-down"></i>
+
+                                </div>
+                                <div id="info" class="infoDoctor">
+
+
+                                    <div>
+                                        <input id="name" formControlName="name" class="name" placeholder=" Name"
+                                            type="text">
+                                    </div>
+
+
+                                    <div>
+                                        <input id="number" formControlName="number" class="email" placeholder="Number"
+                                            type="number">
+                                    </div>
+
+                                    <div>
+                                        <input id="Specialization" formControlName="Specialization" class="pass"
+                                            placeholder="specialization" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn">Next</button>
+
+                    </form>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,65 @@
+<section class="login">
+    
+    <div class="layer"></div>
+   
+    <div class="rightLogin">
+        <div class="headerDoc">
+            <h3 class="">Beds</h3>
+            <i   id='add'class="fa-solid fa-plus "></i>
+        </div>
+        <div  class="doctors mt-5">
+
+            
+        
+            <div class="fields" >
+                
+                <div >
+                    <div class="forms">
+                        <form [formGroup]="bedForm" (ngSubmit)="supmitBedsForm(bedForm)">
+                            <div id="doctors">
+
+                           
+                            <div  class="collection">
+
+                            
+                            <div id="drop" class="docHeader">
+                             <h3>Tybe1 </h3><i id="down" class="fa-sharp fa-solid fa-chevron-down"></i>
+
+                            </div>
+                            <div id="info" class="infoDoctor">
+
+                           
+                            <div class="inputCollection">
+                                <label class="tittle" for="">Number of beds</label>
+                                <input class="name"placeholder=" " type="text">
+                            </div>  
+                           
+                           
+                            <div  class="inputCollection">
+                                <input class="email avilable" value='available'placeholder="" type="button">
+                                <input class="email unavilable"value='Unavailable' placeholder="Unavailable" type="button">
+
+                            </div>
+
+                            <div class="inputCollection">
+                                <label class="tittle" for="">Cost per day</label>
+
+                                <input class="pass"placeholder="" type="text">
+                            </div>
+                            </div> 
+                            </div>
+                           </div>
+                            <button  class="btn">Next</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+
+        </div>
+
+    </div>
+</section>

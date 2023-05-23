@@ -1,0 +1,59 @@
+<section class="login">
+    <div class="pictur ">
+        <img src="../../assets/imgs/login/code.png" class="" alt="">
+        <div class="layer"></div>
+    </div>
+    <div class="rightLogin">
+        <div>
+            
+            <div class="forms">
+                <h3>Verify code</h3>
+                <p>The verification code was sent via email</p>
+                <form [formGroup]="codeForm" (ngSubmit)="SupmitCodeForm()" action="">
+                    <div  class="codeer">
+                        <input formControlName="num1" class="email" type="">
+                        <input formControlName="num2" class="email" type="">
+                        <input formControlName="num3" class="email" type="">
+                        <input formControlName="num4" class="email" type="">
+
+
+                       
+                    </div>
+                     <!-- <div *ngIf="
+                               codeForm.controls['num1'].errors||
+                               codeForm.controls['num1'].touched||
+                               codeForm.controls['num1'].errors['maxlength']||
+                               codeForm.controls['num1'].errors['maxlength']||
+                               codeForm.controls['num1'].errors['pattern']&&
+
+                               codeForm.controls['num2'].errors||
+                               codeForm.controls['num2'].touched||
+                               codeForm.controls['num2'].errors['maxlength']||
+                               codeForm.controls['num2'].errors['maxlength']||
+                               codeForm.controls['num2'].errors['pattern']&&
+
+                               codeForm.controls['num3'].errors||
+                               codeForm.controls['num3'].touched||
+                               codeForm.controls['num3'].errors['maxlength']||
+                               codeForm.controls['num3'].errors['maxlength']||
+                               codeForm.controls['num3'].errors['pattern']&&
+
+                              codeForm.controls['num4'].errors||
+                              codeForm.controls['num4'].touched||
+                              codeForm.controls['num4'].errors['maxlength']||
+                              codeForm.controls['num4'].errors['maxlength']||
+                              codeForm.controls['num4'].errors['pattern']">
+
+                            <p class="ms-4 text-start"> <span class="text-danger">*</span> Code is not correct</p>
+                     </div> -->
+                    
+                    <button class="btn" >Continue</button>
+                    <p class="resend">Don’t resive code ?  <span>  <a routerLink="/"> Resent</a> </span></p>
+
+                </form>
+            </div>
+        </div>
+       
+
+    </div>
+</section>

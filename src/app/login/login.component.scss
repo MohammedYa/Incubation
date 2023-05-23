@@ -1,0 +1,156 @@
+
+
+.login{
+    height: 100vh;   
+   background-image: url("../../assets/imgs/login/image 2.png");
+   background-size: 70% 100%;
+   background-repeat: no-repeat;
+
+   position: relative;
+   }
+.pictur{
+    position: relative;
+    width: 1017px;
+    height: 100vh;
+    .layer{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(233.06deg, rgba(0, 255, 239, 0.31) 0%, rgba(1, 144, 154, 0.31) 100%);}
+    img{
+        width:100%;
+        height: 100vh;
+    }
+}
+.rightLogin{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    height: 100%;
+    width: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    overflow-y: scroll;
+
+    .count{
+       
+           
+          
+    display: grid;
+    row-gap: 115px;
+    .img{
+        margin: 232px auto auto auto;
+       }
+    }
+
+    .forms{
+      
+        form{
+            text-align: -webkit-center;
+        }
+        .email,.pass{
+            padding: 21px;
+            width: 462px;
+            height: 47px;
+            border: 1px solid #A4A4A4 ;
+            color: #00FFEF !important;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+            margin: 10px 0px;
+        }
+
+        .email:focus,.pass:focus{
+             
+                outline: none !important;
+                border-color: #00FFEF;
+        }
+        .email:focus::placeholder,.pass:focus::placeholder{
+            color: #00FFEF;
+
+        }
+        .email::placeholder,.pass::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #A4A4A4;
+            opacity: 1; /* Firefox */
+          }
+          
+
+
+
+
+        .btn{
+        color: #fff;
+        display: block;
+        width: 215px;
+        height: 47px;
+        background: linear-gradient(90deg, #00FFEF -49.62%, #01909A 100%);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        margin: 30px 0px;
+
+        }
+        .forget{
+            display: block;
+            width: 100%;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: right;
+            color: #A4A4A4;
+
+            text-decoration: none;
+        }
+        p{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: #A4A4A4;
+            span a{
+                text-decoration: none;
+                color: #01909A;
+            }
+        }
+    }
+}
+.rightLogin::-webkit-scrollbar {
+width: 1em;
+}
+
+.rightLogin::-webkit-scrollbar-track {
+box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.rightLogin::-webkit-scrollbar-thumb {
+background: linear-gradient(184.18deg, #00FFEF 0%, #01909A 100%);
+border-radius: 21px;
+outline: 1px solid rgb(45, 192, 192);
+}
+
+   .layer{
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(233.06deg, rgba(0, 255, 239, 0.31) 0%, rgba(1, 144, 154, 0.31) 100%);
+   }
+.emailvalidtion{
+   text-align: left; 
+  p{
+     
+      font-size: 15px !important;
+      margin: 0px !important;
+ span{
+    color: #f00;
+ }
+}
+      
+
+}  

@@ -1,5 +1,7 @@
 import {  Component,OnInit} from '@angular/core';
 import {  FormControl,FormGroup,Validators,FormArray,FormBuilder} from '@angular/forms';
+import { RegisterService } from '../register.service';
+import { Router } from '@angular/router';
 declare var $:any;
 @Component({
   selector: 'app-rigester-doctors',
@@ -8,45 +10,71 @@ declare var $:any;
 })
 export class RigesterDoctorsComponent implements OnInit{
 
-
+errors:string=''
  
 
-  DoctorForm=this._FormBuilder.group({
+//   registerDoctorForm=this._FormBuilder.group({
     
-    MoreDoc: this._FormBuilder.array([
+//     MoreDoc: this._FormBuilder.array([
 
-      this._FormBuilder.group({
-        name:['',[Validators.email,Validators.required,Validators.minLength(3),Validators.maxLength(8)]],
-        number:['',[Validators.required]],
-        Specialization:['',[Validators.required]],
-        })
+//       this._FormBuilder.group({
+//         name:['',[Validators.email,Validators.required,Validators.minLength(3),Validators.maxLength(8)]],
+//         number:['',[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]],
+//         Specialization:['',[Validators.required,Validators.maxLength(25),Validators.minLength(3)]],
+//         })
 
-    ])
-  })
-  addDoc(){
+//     ])
+//   })
+//   addDoc(){
 
     
-    this.members.push(this._FormBuilder.group({
-      name:['',[Validators.email,Validators.required,Validators.minLength(3),Validators.maxLength(8)]],
-      number:['',[Validators.required]],
-      Specialization:['',[Validators.required]],
-      }))
-  }
-  get members():FormArray{
-    return this.DoctorForm.get('MoreDoc')as FormArray
-  }
+//     this.members.push(this._FormBuilder.group({
+//       name:['',[Validators.email,Validators.required,Validators.minLength(3),Validators.maxLength(8)]],
+//       number:['',[Validators.required]],
+//       Specialization:['',[Validators.required]],
+//       }))
+//   }
+//   get members():FormArray{
+//     return this.registerDoctorForm.get('MoreDoc')as FormArray
+//   }
 
+
+// supmitDoctorForm(form:FormGroup){
+  
+  
+  
+//   console.log(this.registerDoctorForm.value)
+// }
+
+registerDoctorForm:FormGroup=new FormGroup({
+"name":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
+"phoneNumber":new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
+"specialization":new FormControl(null,[Validators.required,Validators.maxLength(25),Validators.minLength(3)]),
+"incubatorId": new FormControl(2)
+})
 
 supmitDoctorForm(form:FormGroup){
   
   
-  
-  console.log(this.DoctorForm.value)
-}
+  this._RegisterService.registerDoctor(form.value).subscribe(
+  (res)=>{
+   if(res.isSuccess) {
+     this._Router.navigate(['/bedRegister'])
+   }
+   else{
+    this.errors="cheek Your Forms some Data  Doctor is oready Register"
+
+   }
+  })
+  }
 
 
 
-constructor(private  _FormBuilder:FormBuilder){}
+
+
+
+
+constructor(private  _FormBuilder:FormBuilder,private _RegisterService:RegisterService,private _Router:Router){}
 ngOnInit( ): void {
   
 

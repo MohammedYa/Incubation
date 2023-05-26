@@ -22,7 +22,15 @@ supmitLoginForm(form:FormGroup){
   
 
   this._AuthPersonService.loginPerson(form.value).subscribe((res)=>{
-    console.log(res)
+
+    localStorage.setItem("UserToken",res.token)
+    if(res.roleName=="User"){
+      this._Router.navigate(["/personHome"])
+    }
+    else if(res.roleName=="Incubator"){
+      this._Router.navigate(['/IncubatorHome'])
+    }
+
   })
 }
 

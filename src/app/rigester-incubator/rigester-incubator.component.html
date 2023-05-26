@@ -7,7 +7,8 @@
             <div class="m-auto ">
             <img src="../../assets/imgs/login/logo color 1.png" alt="">
             </div>
-            <div class="forms">
+            <h6 *ngIf="errors" class="bg-danger  error ">{{errors}}</h6>
+           <div class="forms">
                 <form [formGroup]="RegisterIncubationForm"  (ngSubmit)="supmitRegisterIncubation(RegisterIncubationForm)" >
                    
                     <div >
@@ -24,7 +25,7 @@
                         <input formControlName="phoneNumber" class="pass"placeholder="Phone Number" type="text">
                         <div  *ngIf="RegisterIncubationForm.controls['phoneNumber'].errors&&RegisterIncubationForm.controls['phoneNumber'].touched " class="emailvalidtion">
                             <p *ngIf="RegisterIncubationForm.controls['phoneNumber'].errors['required']"> <span>*</span> Phone is required </p>
-                            <p *ngIf="RegisterIncubationForm.controls['phoneNumber'].errors['pattern']"><span>*</span>password is not valid   </p>
+                            <p *ngIf="RegisterIncubationForm.controls['phoneNumber'].errors['pattern']"><span>*</span>phone is not valid   </p>
 
                         </div>
                     </div>
@@ -56,7 +57,7 @@
                         </div>
                     </div>
                    
-                    <button class="btn">Next</button>
+                    <button [disabled]="RegisterIncubationForm.invalid" class="btn">Next</button>
                     <p> Already have an account ?<span>  <a routerLink="/login"> Login </a> </span></p>
                 </form>
             </div>

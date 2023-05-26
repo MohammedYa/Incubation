@@ -83,18 +83,21 @@
    height: 47px;
    background: #FFFFFF;
    border: 1px solid #A4A4A4 ;
-   color: #00FFEF !important;
+   color: #A4A4A4 !important;
    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
    border-radius: 30px;
    margin: 10px 0px;
    }
-   .avilable{
-    
+   .tybe{
+    width: 400px;
+   }
+   .available{
+    color: #fff!important;
     background-color: #93BC39;;
    }
-   .unavilable{
+   .unavailable{
     background-color:#EE3E54;
-
+    color: #fff !important;
    }
    .email:focus,.pass:focus,.name:focus{
    
@@ -163,3 +166,16 @@
         }
     }
    }
+   .emailvalidtion{
+    text-align: left; 
+    p{
+    
+    font-size: 15px !important;
+    margin: 0px !important;
+    span{
+    color: #f00;
+    }
+    }
+    
+    
+    }

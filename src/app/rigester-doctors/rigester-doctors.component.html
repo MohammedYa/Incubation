@@ -5,7 +5,7 @@
     <div class="rightLogin">
         <div class="headerDoc">
             <h3 class="">Doctors</h3>
-            <i id='add' class="fa-solid fa-plus " (click)="addDoc()"></i>
+            <i id='add' class="fa-solid fa-plus " ></i>
         </div>
         <div class="doctors mt-5">
 
@@ -13,9 +13,79 @@
 
             <div class="fields">
 
-
                 <div class="forms">
-                    <form [formGroup]="DoctorForm" (ngSubmit)="supmitDoctorForm(DoctorForm)">
+                    <form [formGroup]="registerDoctorForm" (ngSubmit)="supmitDoctorForm(registerDoctorForm)">
+                      
+                        <div  id="doctors" >
+
+
+                            <div  class="collection">
+
+
+                                <div id="drop" class="docHeader">
+                                    <h3>Doctor1 </h3><i id="down" class="fa-sharp fa-solid fa-chevron-down"></i>
+
+                                </div>
+                                <div id="info" class="infoDoctor">
+
+
+                                    <div>
+                                        <input id="name" formControlName="name" class="name" placeholder=" Name" type="text">
+                                        <div  *ngIf="registerDoctorForm.controls['name'].errors&&registerDoctorForm.controls['name'].touched " class="emailvalidtion">
+                                            <p *ngIf="registerDoctorForm.controls['name'].errors['minlength']"> <span>*</span> FullName you must contain min length 3 </p>
+                                            <p *ngIf="registerDoctorForm.controls['name'].errors['required']"> <span>*</span> FullName is required </p>
+                                            <p  *ngIf="registerDoctorForm.controls['name'].errors['maxlength']"><span>*</span> FullName you must contain Max length 20  </p>
+                
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <input id="number" formControlName="phoneNumber" class="email" placeholder="Number"
+                                            type="text">
+                                            <div   *ngIf="registerDoctorForm.controls['phoneNumber'].errors&&registerDoctorForm.controls['phoneNumber'].touched " class="emailvalidtion">
+                                                <p *ngIf="registerDoctorForm.controls['phoneNumber'].errors['required']"> <span>*</span> Phone is required </p>
+                                                <p *ngIf="registerDoctorForm.controls['phoneNumber'].errors['pattern']"><span>*</span>phone is not valid   </p>
+                    
+                                            </div>
+                                    </div>
+
+                                    <div>
+                                        <input id="Specialization" formControlName="specialization" class="pass"
+                                            placeholder="specialization" type="text">
+                                            <div *ngIf="registerDoctorForm.controls['specialization'].errors&&registerDoctorForm.controls['specialization'].touched " class="emailvalidtion">
+                                                <p *ngIf="registerDoctorForm.controls['specialization'].errors['minlength']"> <span>*</span> specialization you must contain min length 3 </p>
+                                                <p *ngIf="registerDoctorForm.controls['specialization'].errors['required']"> <span>*</span> specialization is required </p>
+                                                <p *ngIf="registerDoctorForm.controls['specialization'].errors['maxlength']"><span>*</span> specialization you must contain Max length 20  </p>
+                    
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button [disabled]="registerDoctorForm.invalid" class="btn">Next</button>
+
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- 
+                <div class="forms">
+                    <form [formGroup]="registerDoctorForm" (ngSubmit)="supmitDoctorForm(registerDoctorForm)">
                       
                         <div *ngFor="let Doc of members?.controls ; let i=index" id="doctors" formArrayName="MoreDoc">
 
@@ -31,34 +101,40 @@
 
 
                                     <div>
-                                        <input id="name" formControlName="name" class="name" placeholder=" Name"
-                                            type="text">
+                                        <input id="name" formControlName="name" class="name" placeholder=" Name" type="text">
+                                        <div  *ngIf=" " class="emailvalidtion">
+                                            <p *ngIf=""> <span>*</span> FullName you must contain min length 3 </p>
+                                            <p *ngIf=""> <span>*</span> FullName is required </p>
+                                            <p *ngIf=""><span>*</span> FullName you must contain Max length 20  </p>
+                
+                                        </div>
                                     </div>
 
 
                                     <div>
                                         <input id="number" formControlName="number" class="email" placeholder="Number"
-                                            type="number">
+                                            type="text">
+                                            <div  *ngIf="" class="emailvalidtion">
+                                                <p *ngIf=""> <span>*</span> Phone is required </p>
+                                                <p *ngIf=""><span>*</span>phone is not valid   </p>
+                    
+                                            </div>
                                     </div>
 
                                     <div>
                                         <input id="Specialization" formControlName="Specialization" class="pass"
                                             placeholder="specialization" type="text">
+                                            <div  *ngIf="" class="emailvalidtion">
+                                                <p *ngIf=""> <span>*</span> FullName you must contain min length 3 </p>
+                                                <p *ngIf=""> <span>*</span> FullName is required </p>
+                                                <p *ngIf=""><span>*</span> FullName you must contain Max length 20  </p>
+                    
+                                            </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn">Next</button>
+                        <button [disabled]="registerDoctorForm.invalid" class="btn">Next</button>
 
                     </form>
-                </div>
-
-            </div>
-
-
-
-
-        </div>
-
-    </div>
-</section>
+                </div> -->

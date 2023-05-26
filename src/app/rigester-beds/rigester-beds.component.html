@@ -15,7 +15,7 @@
                 
                 <div >
                     <div class="forms">
-                        <form [formGroup]="bedForm" (ngSubmit)="supmitBedsForm(bedForm)">
+                        <form [formGroup]="registerBedForm" (ngSubmit)="supmitBedsForm(registerBedForm)">
                             <div id="doctors">
 
                            
@@ -30,26 +30,47 @@
 
                            
                             <div class="inputCollection">
-                                <label class="tittle" for="">Number of beds</label>
-                                <input class="name"placeholder=" " type="text">
+                                <input formControlName="typeofBed" class="name tybe"placeholder="Tybe Of Bed " type="text">
+                               
                             </div>  
+                            <div  *ngIf="registerBedForm.controls['typeofBed'].errors&&registerBedForm.controls['typeofBed'].touched " class="emailvalidtion">
+                                    <p *ngIf="registerBedForm.controls['typeofBed'].errors['minlength']"> <span>*</span> Tybe Of Bed you must contain min length 3 </p>
+                                    <p *ngIf="registerBedForm.controls['typeofBed'].errors['required']"> <span>*</span> Tybe Of Bed is required </p>
+                                    <p  *ngIf="registerBedForm.controls['typeofBed'].errors['maxlength']"><span>*</span> Tybe Of Bed you must contain Max length 20  </p>
+        
+                            </div>
                            
-                           
-                            <div  class="inputCollection">
-                                <input class="email avilable" value='available'placeholder="" type="button">
-                                <input class="email unavilable"value='Unavailable' placeholder="Unavailable" type="button">
-
+                            <div class="inputCollection">
+                                <label (click)="changeStatusOk()"[ngClass]="{available:okstatus}" for="available" class="email  ">
+                                  <input class="d-none"type="radio" formControlName="condition" id="available" value="available">
+                                  Available
+                                </label>
+                                <label  (click)="changeStatusUn()"[ngClass]="{unavailable:Unstatus}"for="unavailable" class="email unavailable">
+                                  <input class="d-none" type="radio" formControlName="condition"id='unavailable' value="unavailable">
+                                  Unavailable
+                                </label>
+                               
+                            </div>
+                            <div  *ngIf="registerBedForm.controls['condition'].errors&&registerBedForm.controls['costPerDay'].touched " class="emailvalidtion">
+                                    <p *ngIf="registerBedForm.controls['condition'].errors['required']"> <span>*</span>condition is required </p>
+        
                             </div>
 
                             <div class="inputCollection">
                                 <label class="tittle" for="">Cost per day</label>
 
-                                <input class="pass"placeholder="" type="text">
+                                <input  formControlName="costPerDay" class="pass"placeholder="" type="text">
+                                
+                            </div>
+                            <div  *ngIf="registerBedForm.controls['costPerDay'].errors&&registerBedForm.controls['costPerDay'].touched " class="emailvalidtion">
+                                    <p *ngIf="registerBedForm.controls['costPerDay'].errors['minlength']"> <span>*</span> costPerDay you must contain min length 3 </p>
+                                    <p *ngIf="registerBedForm.controls['costPerDay'].errors['required']"> <span>*</span>costPerDay is required </p>
+        
                             </div>
                             </div> 
                             </div>
                            </div>
-                            <button  class="btn">Next</button>
+                            <button [disabled]="registerBedForm.invalid" class="btn">Next</button>
                             
                         </form>
                     </div>

@@ -1,6 +1,7 @@
 import { Component ,OnInit} from '@angular/core';
 import { FormGroup,Validators ,FormControl} from '@angular/forms';
 import { RegisterService } from '../register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rigester-person',
@@ -8,7 +9,7 @@ import { RegisterService } from '../register.service';
   styleUrls: ['./rigester-person.component.scss']
 })
 export class RegisterPersonComponent implements OnInit {
-
+ errors:string=''
   RegisterPersonForm:FormGroup=new FormGroup({
     'displayName':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
     'phoneNumber':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
@@ -18,18 +19,30 @@ export class RegisterPersonComponent implements OnInit {
   })
   
   supmitRegisterPerson(form:FormGroup){
+    console.log(form.value)
 
-    this._RegisterService.registerPerson(form.value).subscribe((res)=>{
-    console.log(res)
-
-    })
+    this._RegisterService.registerPerson(form.value).subscribe(
+      
+    (res)=>{
+   
+      this._Router.navigate(['/login'])
+    
+    }
+    ,
+    (error)=>{
+     this.errors ="Email is oready register"
+    },
+    
+    
+    
+    )
   }
 
 
 
 
   
-constructor(private _RegisterService:RegisterService){}
+constructor(private _RegisterService:RegisterService ,private _Router:Router){}
 ngOnInit(): void {
   
 }

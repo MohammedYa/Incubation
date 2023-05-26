@@ -13,6 +13,12 @@ export class RegisterService {
     return this._HttpClient.post(`http://sayedazp-001-site1.gtempurl.com/api/Account/registerUser`,form)
   }
   registerIncubator(form:any):Observable<any>{
-    return this._HttpClient.post(`http://sayedazp-001-site1.gtempurl.com/api/Account/registerInc`,form)
+    return this._HttpClient.post(`http://sayedazp-001-site1.gtempurl.com/api/Account/registerIncubator`,form)
+  }
+  registerDoctor(form:any):Observable<any>{
+    return this._HttpClient.post(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/AddDoctor`,form)
+  }
+  registerBed(form:any):Observable<any>{
+    return this._HttpClient.post(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/AddBed`,form)
   }
 }

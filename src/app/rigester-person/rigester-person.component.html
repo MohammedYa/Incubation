@@ -6,7 +6,9 @@
         <div class="count">
             <div class="m-auto ">
             <img src="../../assets/imgs/login/logo color 1.png" alt="">
-            </div>
+            </div>   
+           <h6 *ngIf="errors" class="bg-danger  error ">{{errors}}</h6>
+
             <div class="forms">
                 <form [formGroup]="RegisterPersonForm"  (ngSubmit)="supmitRegisterPerson(RegisterPersonForm)" action="">
                    
@@ -56,7 +58,7 @@
                         </div>
                     </div>
                    
-                    <button class="btn">Next</button>
+                    <button [disabled]="RegisterPersonForm.invalid" class="btn">Next</button>
                     <p> Already have an account ?<span>  <a routerLink="/login"> Login </a> </span></p>
                 </form>
             </div>

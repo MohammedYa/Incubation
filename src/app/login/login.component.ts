@@ -20,21 +20,26 @@ LoginForm:FormGroup =new FormGroup({
 
 supmitLoginForm(form:FormGroup){
   
-
   this._AuthPersonService.loginPerson(form.value).subscribe((res)=>{
+localStorage.setItem("User",JSON.stringify(res) )
 
-    localStorage.setItem("UserToken",res.token)
     if(res.roleName=="User"){
+      localStorage.setItem("UserToken",res.token)
+      this._AuthPersonService.saveUserData()
+
       this._Router.navigate(["/personHome"])
+
+
+
     }
     else if(res.roleName=="Incubator"){
+      localStorage.setItem("UserToken",res.token)
+
       this._Router.navigate(['/IncubatorHome'])
     }
 
   })
 }
-
-
   constructor(private _AuthPersonService:AuthPersonService,private _Router:Router){}
 
   ngOnInit(): void {

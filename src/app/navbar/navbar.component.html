@@ -4,11 +4,33 @@
     </div>
     <div class="contatin">
         <ul class="links">
-            <li><a routerLink="/about"  routerLinkActive="active">About</a></li>
+            <!-- <li ><a routerLink=""  routerLinkActive="active">Home</a></li>
 
-            <li><a routerLink="/login"  routerLinkActive="active">Login</a></li>
-            <li><a routerLink="/register"  routerLinkActive="active">Sign up</a></li>
-            <li><a routerLink="">Logout</a></li>
+            <li><a routerLink=""  routerLinkActive="active">Home</a></li> -->
+            <li><a routerLink="/about"  routerLinkActive="active">About</a></li>
+            <li><a routerLink="/contact"  routerLinkActive="active">contact</a></li>
+
+           
+        </ul>
+        <ul class="links">
+           
+
+            <li  *ngIf="!isLoggedIn"><a routerLink="/login"  routerLinkActive="active">Login</a></li>
+            <li  *ngIf="!isLoggedIn"><a routerLink="/register"  routerLinkActive="active">Sign up</a></li>
+            <li *ngIf="isLoggedIn"><a (click)="LogOut()" >Logout</a></li>
+            <li  *ngIf="isLoggedIn" class="profile">
+                <i class="fa-solid fa-user fa-2x"></i>
+                <div class="Account ">
+                <ul>
+                    <li class="name"><img src="../../assets/imgs/home/4.jpg" alt="">
+                       <span>{{userName}}</span> 
+                    </li>
+                    <li>Gmail : <span>{{userEmail}}</span></li>
+                    <li>city : <span>{{userCity}}</span></li>
+                </ul> 
+                </div>
+            </li>
+           
 
         </ul>
     </div>

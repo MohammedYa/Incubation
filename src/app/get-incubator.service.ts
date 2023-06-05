@@ -23,4 +23,7 @@ export class GetIncubatorService {
 
     return this.httpClient.get('http://sayedazp-001-site1.gtempurl.com/api/Incubator/beds', { headers });
   }
+  getIncubatorDetails(Id:string): Observable<any> {
+    return this.httpClient.get(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/GetIncubator/${Id}`);
+  }
 }

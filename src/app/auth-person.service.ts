@@ -9,7 +9,11 @@ import { Observable ,BehaviorSubject} from 'rxjs';
 })
 export class AuthPersonService {
   userData=new BehaviorSubject(null);
-  constructor(private _HttpClient:HttpClient,private _Router:Router) { }
+  constructor(private _HttpClient:HttpClient,private _Router:Router) {
+    if(localStorage.getItem("UserToken")!=null){
+      this.saveUserData()
+    }
+   }
 
   saveUserData(){
    let encodedToken= localStorage.getItem("UserToken")
@@ -23,7 +27,6 @@ export class AuthPersonService {
   LogOut(){
     
     localStorage.removeItem("UserToken")
-    localStorage.removeItem("User")
     this.userData.next(null)
     this._Router.navigate(["/login"])
  

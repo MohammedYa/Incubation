@@ -1,28 +1,34 @@
 <section>
-  <div class="count">
-      <div class="name">
+   <div  *ngFor="let bed of beds"> 
+    <a class="count" >
+       <div class="name">
 
-          <h4>tybe 1</h4>
+          <h4>{{bed.typeofBed}}</h4>
       </div>
       <div class="details">
 
           <ul>
-              <li>
+              <!-- <li>
                   6 beds busy
                  
-              </li>
+              </li> -->
               <li>
-                  2 beds Unavailable
+                  {{bed.costPerDay}} E.L
                   
               </li>
               <li>
-                  5 bed available
+                 {{ bed.condition}}
               </li>
 
           </ul>
-      </div> 
+      </div>    
+    </a>
+        
+    
+    
   </div>
-  
+ 
+
 
  
 </section>

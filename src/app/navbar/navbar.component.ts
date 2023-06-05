@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit{
    this.SetDataUser() 
     this._AuthPersonService.userData.subscribe(
       ()=>{
-        if(this._AuthPersonService.userData.getValue()){
+        if(this._AuthPersonService.userData.getValue()!=null){
           this.isLoggedIn = true
         }
         else{

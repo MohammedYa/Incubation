@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router ,ActivatedRoute} from '@angular/router';
 import { RegisterService } from '../register.service';
 
 declare var $:any;
@@ -57,7 +57,7 @@ changeStatusUn(){
     "typeofBed":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
     "condition":new FormControl(null,[Validators.required]),
     "costPerDay":new FormControl(null,[Validators.required,Validators.min(100)]),
-    "incubatorId": new FormControl(2)
+    "incubatorId": new FormControl(this._ActivatedRoute.snapshot.params['id'])
   })
   supmitBedsForm(form:FormGroup){
     this._RegisterService.registerBed(form.value).subscribe(
@@ -72,7 +72,7 @@ changeStatusUn(){
       }
     )
   }
-  constructor(private _FormBuilder:FormBuilder,private _Router:Router,private _RegisterService:RegisterService){}
+  constructor(private _FormBuilder:FormBuilder,private _Router:Router,private _RegisterService:RegisterService,private _ActivatedRoute:ActivatedRoute){}
   ngOnInit(): void {
     
    

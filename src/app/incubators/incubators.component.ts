@@ -7,15 +7,18 @@ import { GetIncubatorService } from '../get-incubator.service';
   styleUrls: ['./incubators.component.scss']
 })
 export class IncubatorsComponent implements OnInit {
-incupator:any[]=[]
-IncToken:string=localStorage.getItem("IncToken")!
+beds:any[]=[]
+IncToken:string=localStorage.getItem("UserToken")!
 
 getIncupator(){
 this._GetIncubatorService.getIncurBed(this.IncToken).subscribe((res)=>{
 console.log(res)
+this.beds=res
 })
  }
-constructor(private _GetIncubatorService:GetIncubatorService) {}
+constructor(private _GetIncubatorService:GetIncubatorService) {
+  this.getIncupator()
+}
 ngOnInit(): void {
   
 }

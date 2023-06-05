@@ -1,7 +1,7 @@
 import {  Component,OnInit} from '@angular/core';
 import {  FormControl,FormGroup,Validators,FormArray,FormBuilder} from '@angular/forms';
 import { RegisterService } from '../register.service';
-import { Router } from '@angular/router';
+import { Router ,ActivatedRoute} from '@angular/router';
 declare var $:any;
 @Component({
   selector: 'app-rigester-doctors',
@@ -11,7 +11,6 @@ declare var $:any;
 export class RigesterDoctorsComponent implements OnInit{
 
 errors:string=''
- 
 
 //   registerDoctorForm=this._FormBuilder.group({
     
@@ -50,23 +49,22 @@ registerDoctorForm:FormGroup=new FormGroup({
 "name":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
 "phoneNumber":new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
 "specialization":new FormControl(null,[Validators.required,Validators.maxLength(25),Validators.minLength(3)]),
-"incubatorId": new FormControl(2)
+"incubatorId": new FormControl(this._ActivatedRoute.snapshot.params['id'])
 })
 
 supmitDoctorForm(form:FormGroup){
   
-  
   this._RegisterService.registerDoctor(form.value).subscribe(
   (res)=>{
    if(res.isSuccess) {
-     this._Router.navigate(['/bedRegister'])
+     this._Router.navigate(['/bedRegister',this._ActivatedRoute.snapshot.params['id']])
    }
    else{
     this.errors="cheek Your Forms some Data  Doctor is oready Register"
 
    }
   })
-  }
+}
 
 
 
@@ -74,7 +72,7 @@ supmitDoctorForm(form:FormGroup){
 
 
 
-constructor(private  _FormBuilder:FormBuilder,private _RegisterService:RegisterService,private _Router:Router){}
+constructor(private  _FormBuilder:FormBuilder,private _RegisterService:RegisterService,private _Router:Router,private _ActivatedRoute:ActivatedRoute){}
 ngOnInit( ): void {
   
 

@@ -21,19 +21,13 @@ LoginForm:FormGroup =new FormGroup({
 supmitLoginForm(form:FormGroup){
   
   this._AuthPersonService.loginPerson(form.value).subscribe((res)=>{
-localStorage.setItem("User",JSON.stringify(res) )
-
-    if(res.roleName=="User"){
       localStorage.setItem("UserToken",res.token)
       this._AuthPersonService.saveUserData()
 
+    if(res.roleName=="User"){
       this._Router.navigate(["/personHome"])
-
-
-
     }
     else if(res.roleName=="Incubator"){
-      localStorage.setItem("UserToken",res.token)
 
       this._Router.navigate(['/IncubatorHome'])
     }

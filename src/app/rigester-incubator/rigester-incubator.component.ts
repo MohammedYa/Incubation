@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RigesterIncubatorComponent implements OnInit {
   errors:string=''
-
+  id:string=''
   RegisterIncubationForm:FormGroup=new FormGroup({
     'displayName':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
     'phoneNumber':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
@@ -24,8 +24,9 @@ export class RigesterIncubatorComponent implements OnInit {
   
   (res)=>{
  
-
-    this._Router.navigate(['/doctorRegister'])
+    console.log(res)
+    this.id=res.id
+    this._Router.navigate(['/doctorRegister',this.id])
   
   }
   ,

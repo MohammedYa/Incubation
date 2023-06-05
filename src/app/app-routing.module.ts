@@ -17,6 +17,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AvilableBedComponent } from './avilable-bed/avilable-bed.component';
 import { BookIncubatorComponent } from './book-incubator/book-incubator.component';
 import { IncubatorDetailsComponent } from './incubator-details/incubator-details.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'/about',pathMatch:'full' },
@@ -29,14 +30,14 @@ const routes: Routes = [
   {path:'recorrectPassword',component:CorrectPasswordComponent},
   {path:'personRegister',component:RegisterPersonComponent},
   {path:'incubationRegister',component:RigesterIncubatorComponent},
-  {path:'doctorRegister',component:RigesterDoctorsComponent},
-  {path:'bedRegister',component:RigesterBedsComponent},
-  {path:'Incubators',component:HomePersonComponent},
-  {path:'IncubatorHome',component:IncubatorsComponent},
-  {path:'personHome',component:HomePersonComponent},
-  {path:'incubation-page',component:IncubatorDetailsComponent},
-  {path:'book',component:BookIncubatorComponent},
-  {path:'available-bed',component:AvilableBedComponent},
+  {path:'doctorRegister/:id',component:RigesterDoctorsComponent},
+  {path:'bedRegister/:id',component:RigesterBedsComponent},
+  {path:'Incubators',canActivate:[AuthGuard],component:HomePersonComponent},
+  {path:'IncubatorHome',canActivate:[AuthGuard],component:IncubatorsComponent},
+  {path:'personHome',canActivate:[AuthGuard],component:HomePersonComponent},
+  {path:'incubation-page/:id',canActivate:[AuthGuard],component:IncubatorDetailsComponent},
+  {path:'book',canActivate:[AuthGuard],component:BookIncubatorComponent},
+  {path:'available-bed',canActivate:[AuthGuard],component:AvilableBedComponent},
 
   {path:'**',component:NotfoundComponent}
 

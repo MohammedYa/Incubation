@@ -23,7 +23,8 @@ section{
         color: #D9D9D9;
         margin-bottom: 20px;
     }
-    .near{
+    .near{    
+        margin: auto;
          padding: 60px;
         .item{
             position: relative;
@@ -80,4 +81,10 @@ line-height: 48px;
 color: #01909A;
 
    }
+}
+a{
+    text-decoration: none;
+}
+.title{
+    display: inline-block;
 }

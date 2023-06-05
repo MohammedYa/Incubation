@@ -1,6 +1,6 @@
 <section>
     <div class="count">
-        <div class="Categories">
+        <!-- <div class="Categories">
             <h2>Categories</h2>
             <div class="name">
 
@@ -27,12 +27,13 @@
                 <h4>tybe 1</h4>
             </div>
             
-        </div>
+        </div> -->
         <div class="near">
 
             <h2>Nearest  Incubation</h2>
             <div class="item" *ngFor="let Icubator of Incubators">
-                <img src="../../assets/imgs/home/cover.png" class="img" alt=""> 
+                <a [routerLink]="['/incubation-page',Icubator.id]">
+                  <img src="../../assets/imgs/home/cover.png" class="img" alt=""> 
                 <div class="title">
                  <h4>{{Icubator.name}}</h4>
                  <p>{{ Icubator.city}}</p>
@@ -48,7 +49,9 @@
                      </defs>
                      </svg>
                      
-                </div>
+                </div>   
+                </a>
+               
              </div>
             
         </div>

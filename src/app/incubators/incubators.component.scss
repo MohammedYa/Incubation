@@ -1,10 +1,11 @@
 section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+margin: 200px auto 50px auto ;
+a{
+  text-decoration: none;
+}
 }
 .count{
-margin: 200px auto 50px auto ;
+margin: 20px auto auto auto;
 width: 70%;
 height: 105px;
 background: #FFFFFF;
@@ -17,6 +18,7 @@ ul{
 }
 .name{
 
+  width: 100px;
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;

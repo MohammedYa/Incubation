@@ -4,9 +4,11 @@
     </div>
     <div class="contatin">
         <ul class="links">
-            <li ><a routerLink=""  routerLinkActive="">Home</a></li>
- 
-            <li><a routerLink=""  routerLinkActive="">Blog</a></li>
+            <li ><a *ngIf="isLoggedIn &&canActiveteUser()" routerLink="/personHome"  routerLinkActive="active">Home</a></li>
+            <li ><a *ngIf="isLoggedIn &&canActiveteUser()" routerLink="/BookPerson"  routerLinkActive="active">Booking</a></li>
+            <li ><a *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/IncubatorHome"  routerLinkActive="active">Home</a></li>
+            <li><a  *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/IncubatorDoctors"  routerLinkActive="active">Doctors</a></li>
+            <li><a  *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/BookInc"  routerLinkActive="active">Booking</a></li>
             <li><a routerLink="/about"  routerLinkActive="active">About</a></li>
             <li><a routerLink="/contact"  routerLinkActive="active">contact</a></li>
 

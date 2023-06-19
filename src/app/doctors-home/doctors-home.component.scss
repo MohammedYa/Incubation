@@ -1,0 +1,204 @@
+section{
+margin: 200px auto 50px auto ;
+a{
+text-decoration: none;
+}
+}
+.count{
+margin: 20px auto auto auto;
+width: 70%;
+height: 105px;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 10px;
+display: flex;
+padding: 5px;
+position: relative;
+overflow: hidden;
+ul{
+list-style-type: none;
+}
+.name{
+
+width: 100px;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+color: #01909A;
+display: flex;
+justify-content: center;
+align-items: center;
+
+border: 1px solid #D9D9D9;
+border-radius: 10px;
+}
+.name img{
+border-radius: 10px;
+}
+.details{
+padding-top: 5px;
+width: 200px;
+height: 62px;
+
+
+
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+color: #A4A4A4;
+
+}
+}
+.headerDoc{
+color: #00FFEF;
+font-weight: 700;
+line-height: 48px;
+display: flex;
+justify-content: space-around;
+text-align: center;
+margin-top: 120px;
+i{
+font-weight: 700;
+line-height: 48px;
+font-size: 40px;
+cursor: pointer;
+}
+h3{
+font-weight: 700;
+line-height: 48px;
+font-size: 2.75rem;
+
+}
+}
+.forms{
+
+form{
+text-align: -webkit-center;
+}
+.nameCollection{
+
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+div{
+width: fit-content;
+}
+.name{
+width: 223px;
+height: 46px;
+}
+}
+.email,.pass,.name{
+padding: 21px;
+width: 462px;
+height: 47px;
+border: 1px solid #A4A4A4 ;
+color: #00FFEF !important;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+margin: 10px 0px;
+}
+
+.email:focus,.pass:focus,.name:focus{
+
+outline: none !important;
+border-color: #00FFEF;
+}
+.email:focus::placeholder,.pass:focus::placeholder,.name:focus::placeholder{
+color: #00FFEF;
+
+}
+.email::placeholder,.pass::placeholder,.name::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: #A4A4A4;
+opacity: 1; /* Firefox */
+}
+.btn{
+color: #fff;
+display: block;
+width: 215px;
+height: 47px;
+background: linear-gradient(90deg, #00FFEF -49.62%, #01909A 100%);
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 30px;
+margin: 30px 0px;
+
+}
+}
+.collection{
+width: fit-content;
+margin: auto auto 50px auto ;
+border: #00FFEF 1px solid; 
+border-radius: 30px !important;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+}
+.docHeader{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 21px 25px;
+width: 482px;
+height: 47px;
+cursor: pointer;
+color: #00FFEF !important;
+font-size: 28px;
+}
+.infoDoctor{
+padding: 10px;
+
+}
+#collect{
+width: fit-content;
+margin: auto auto 50px auto ;
+border: #00FFEF 1px solid; 
+border-radius: 30px !important;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+}
+.emailvalidtion{
+text-align: left; 
+p{
+
+font-size: 15px !important;
+margin: 0px !important;
+span{
+color: #f00;
+}
+}
+
+
+}
+.modal-title{
+color: #00FFEF;
+font-weight: 700;
+line-height: 48px;
+font-size: 30px;
+}
+.delete{
+position: absolute;
+top: 65%;
+right: -35px;
+transition: all 1s;
+cursor: pointer;
+font-size: 20px;
+}
+.update{
+font-size: 20px;
+cursor: pointer;
+position: absolute;
+top: 28%;
+right: -35px;
+transition: all 1s;
+}
+.count:hover .delete{
+right: 35px;
+}
+.count:hover .update{
+right: 35px;
+}

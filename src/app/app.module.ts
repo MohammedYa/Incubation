@@ -23,6 +23,9 @@ import { IncubatorDetailsComponent } from './incubator-details/incubator-details
 import { IncubatorsComponent } from './incubators/incubators.component';
 import { BedDetailsComponent } from './bed-details/bed-details.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { DoctorsHomeComponent } from './doctors-home/doctors-home.component';
+import { BookingForIncComponent } from './booking-for-inc/booking-for-inc.component';
+import { BookingForPersonComponent } from './booking-for-person/booking-for-person.component';
 @NgModule({
   declarations: [
       AppComponent,
@@ -44,7 +47,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
       IncubatorDetailsComponent,
       IncubatorsComponent,
       BedDetailsComponent,
-      NotfoundComponent
+      NotfoundComponent,
+      DoctorsHomeComponent,
+      BookingForIncComponent,
+      BookingForPersonComponent
   ],
   imports: [
     HttpClientModule,

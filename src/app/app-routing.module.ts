@@ -18,6 +18,9 @@ import { AvilableBedComponent } from './avilable-bed/avilable-bed.component';
 import { BookIncubatorComponent } from './book-incubator/book-incubator.component';
 import { IncubatorDetailsComponent } from './incubator-details/incubator-details.component';
 import { AuthGuard } from './auth.guard';
+import { DoctorsHomeComponent } from './doctors-home/doctors-home.component';
+import { BookingForIncComponent } from './booking-for-inc/booking-for-inc.component';
+import { BookingForPersonComponent } from './booking-for-person/booking-for-person.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/about',pathMatch:'full' },
@@ -32,11 +35,13 @@ const routes: Routes = [
   {path:'incubationRegister',component:RigesterIncubatorComponent},
   {path:'doctorRegister/:id',component:RigesterDoctorsComponent},
   {path:'bedRegister/:id',component:RigesterBedsComponent},
-  {path:'Incubators',canActivate:[AuthGuard],component:HomePersonComponent},
+  {path:'IncubatorDoctors',canActivate:[AuthGuard],component:DoctorsHomeComponent},
   {path:'IncubatorHome',canActivate:[AuthGuard],component:IncubatorsComponent},
   {path:'personHome',canActivate:[AuthGuard],component:HomePersonComponent},
   {path:'incubation-page/:id',canActivate:[AuthGuard],component:IncubatorDetailsComponent},
   {path:'book',canActivate:[AuthGuard],component:BookIncubatorComponent},
+  {path:'BookInc',canActivate:[AuthGuard],component:BookingForIncComponent},
+  {path:'BookPerson',canActivate:[AuthGuard],component:BookingForPersonComponent},
   {path:'available-bed',canActivate:[AuthGuard],component:AvilableBedComponent},
 
   {path:'**',component:NotfoundComponent}

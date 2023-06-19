@@ -10,6 +10,7 @@ Router
 })
 
 export class LoginComponent implements OnInit  {
+TypeOfUser:string=''
 
 LoginForm:FormGroup =new FormGroup({
   "email":new FormControl(null,[Validators.email,Validators.required]),
@@ -21,13 +22,15 @@ LoginForm:FormGroup =new FormGroup({
 supmitLoginForm(form:FormGroup){
   
   this._AuthPersonService.loginPerson(form.value).subscribe((res)=>{
-      localStorage.setItem("UserToken",res.token)
-      this._AuthPersonService.saveUserData()
-
-    if(res.roleName=="User"){
+    localStorage.setItem("UserToken",res.token)
+    localStorage.setItem("UserTybe",res.roleName)
+    localStorage.setItem("UserInfo",JSON.stringify(res))
+    this._AuthPersonService.saveUserData(res.roleName)
+    this.TypeOfUser=res.roleName
+    if(this.TypeOfUser=="User"){
       this._Router.navigate(["/personHome"])
     }
-    else if(res.roleName=="Incubator"){
+    else if(this.TypeOfUser=="Incubator"){
 
       this._Router.navigate(['/IncubatorHome'])
     }

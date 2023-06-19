@@ -21,8 +21,8 @@
                     <div>
                         <input formControlName="password" class="pass"placeholder="password" type="password">
                         <div  *ngIf="LoginForm.controls['password'].errors&&LoginForm.controls['password'].touched " class="emailvalidtion">
-                            <p *ngIf="LoginForm.controls['password'].errors['required']"> <span>*</span> Email is not valid </p>
-                            <p *ngIf="LoginForm.controls['password'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 6 char  </p>
+                            <p *ngIf="LoginForm.controls['password'].errors['required']"> <span>*</span> password is not valid </p>
+                            <p *ngIf="LoginForm.controls['password'].errors['pattern']"><span>*</span> You must Write minumm 6 char  </p>
 
                         </div>
                     </div>

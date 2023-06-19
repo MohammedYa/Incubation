@@ -5,8 +5,8 @@
                 <div class="count">
                     
                     <div class="forms">
-                        <form [formGroup]="RegisterIncubationForm" (ngSubmit)="supmitRegisterIncubation()" action="">
-                            <div  class="collection">
+                        <form [formGroup]="BookForm" (ngSubmit)="supmitRegisterIncubation(BookForm)" action="">
+                            <!-- <div  class="collection">
 
                             
                                 <div id="drop" class="docHeader">
@@ -23,18 +23,18 @@
         
                                     </div>
                                 </div> 
-                            </div>
-                            <div  *ngIf="RegisterIncubationForm.controls['available'].errors&&RegisterIncubationForm.controls['available'].touched " class="emailvalidtion">
-                                <p *ngIf="RegisterIncubationForm.controls['available'].errors['required']"> <span>*</span> Name is required </p>
+                            </div> -->
+                            <!-- <div  *ngIf="BookForm.controls['available'].errors&&BookForm.controls['available'].touched " class="emailvalidtion">
+                                <p *ngIf="BookForm.controls['available'].errors['required']"> <span>*</span> Name is required </p>
     
-                            </div>
+                            </div> -->
 
                             <div >
                                 <input formControlName="Mather_Name" class="name"placeholder=" Mather Name" type="text">
-                                <div  *ngIf="RegisterIncubationForm.controls['Mather_Name'].errors&&RegisterIncubationForm.controls['Mather_Name'].touched " class="emailvalidtion">
-                                    <p *ngIf="RegisterIncubationForm.controls['Mather_Name'].errors['minlength']"> <span>*</span> Name you must contain min length 5 </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Mather_Name'].errors['required']"> <span>*</span> Name is required </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Mather_Name'].errors['maxlength']"><span>*</span> Name you must contain Max length 20  </p>
+                                <div  *ngIf="BookForm.controls['Mather_Name'].errors&&BookForm.controls['Mather_Name'].touched " class="emailvalidtion">
+                                    <p *ngIf="BookForm.controls['Mather_Name'].errors['minlength']"> <span>*</span> Name you must contain min length 5 </p>
+                                    <p *ngIf="BookForm.controls['Mather_Name'].errors['required']"> <span>*</span> Name is required </p>
+                                    <p *ngIf="BookForm.controls['Mather_Name'].errors['maxlength']"><span>*</span> Name you must contain Max length 20  </p>
         
                                 </div>
                             </div>  
@@ -42,61 +42,61 @@
                            
                             <div >
                                 <input formControlName="Child_Name" class="email"placeholder="Child Name" type="text">
-                                <div  *ngIf="RegisterIncubationForm.controls['Child_Name'].errors&&RegisterIncubationForm.controls['Child_Name'].touched " class="emailvalidtion">
-                                    <p *ngIf="RegisterIncubationForm.controls['Child_Name'].errors['minlength']"> <span>*</span> Name you must contain min length 5 </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Child_Name'].errors['required']"> <span>*</span> Name is required </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Child_Name'].errors['maxlength']"><span>*</span> Name you must contain Max length 20  </p>
+                                <div  *ngIf="BookForm.controls['Child_Name'].errors&&BookForm.controls['Child_Name'].touched " class="emailvalidtion">
+                                    <p *ngIf="BookForm.controls['Child_Name'].errors['minlength']"> <span>*</span> Name you must contain min length 5 </p>
+                                    <p *ngIf="BookForm.controls['Child_Name'].errors['required']"> <span>*</span> Name is required </p>
+                                    <p *ngIf="BookForm.controls['Child_Name'].errors['maxlength']"><span>*</span> Name you must contain Max length 20  </p>
         
                                 </div>
                             </div>
                             
                             <div>
                                 <input formControlName="Date_of_birth" class="pass"placeholder="Date of birth" type="date">
-                                <div  *ngIf="RegisterIncubationForm.controls['Date_of_birth'].errors&&RegisterIncubationForm.controls['Date_of_birth'].touched " class="emailvalidtion">
-                                    <p *ngIf="RegisterIncubationForm.controls['Date_of_birth'].errors['required']"> <span>*</span> password is not valid </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Date_of_birth'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
+                                <div  *ngIf="BookForm.controls['Date_of_birth'].errors&&BookForm.controls['Date_of_birth'].touched " class="emailvalidtion">
+                                    <p *ngIf="BookForm.controls['Date_of_birth'].errors['required']"> <span>*</span> password is not valid </p>
+                                    <p *ngIf="BookForm.controls['Date_of_birth'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
         
                                 </div>
                             </div>
                              
                             <div>
                                 <input formControlName="Type_of_illness" class="pass"placeholder="Type of illness" type="text">
-                                <div  *ngIf="RegisterIncubationForm.controls['Type_of_illness'].errors&&RegisterIncubationForm.controls['Type_of_illness'].touched " class="emailvalidtion">
-                                    <p *ngIf="RegisterIncubationForm.controls['Type_of_illness'].errors['required']"> <span>*</span> password is not valid </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Type_of_illness'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
+                                <div  *ngIf="BookForm.controls['Type_of_illness'].errors&&BookForm.controls['Type_of_illness'].touched " class="emailvalidtion">
+                                    <p *ngIf="BookForm.controls['Type_of_illness'].errors['required']"> <span>*</span> password is not valid </p>
+                                    <p *ngIf="BookForm.controls['Type_of_illness'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
         
                                 </div>
                             </div>
                              
                             <div>
                                 <input formControlName="Phone_Number" class="pass"placeholder="Phone Number" type="text">
-                                <div  *ngIf="RegisterIncubationForm.controls['Phone_Number'].errors&&RegisterIncubationForm.controls['Phone_Number'].touched " class="emailvalidtion">
-                                    <p *ngIf="RegisterIncubationForm.controls['Phone_Number'].errors['required']"> <span>*</span> password is not valid </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Phone_Number'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
+                                <div  *ngIf="BookForm.controls['Phone_Number'].errors&&BookForm.controls['Phone_Number'].touched " class="emailvalidtion">
+                                    <p *ngIf="BookForm.controls['Phone_Number'].errors['required']"> <span>*</span> password is not valid </p>
+                                    <p *ngIf="BookForm.controls['Phone_Number'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
         
                                 </div>
                             </div>
                              
                             <div>
                                 <input formControlName="Doctor_Number" class="pass"placeholder="Doctor’s Phone Number" type="text">
-                                <div  *ngIf="RegisterIncubationForm.controls['Doctor_Number'].errors&&RegisterIncubationForm.controls['Doctor_Number'].touched " class="emailvalidtion">
-                                    <p *ngIf="RegisterIncubationForm.controls['Doctor_Number'].errors['required']"> <span>*</span> password is not valid </p>
-                                    <p *ngIf="RegisterIncubationForm.controls['Doctor_Number'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
+                                <div  *ngIf="BookForm.controls['Doctor_Number'].errors&&BookForm.controls['Doctor_Number'].touched " class="emailvalidtion">
+                                    <p *ngIf="BookForm.controls['Doctor_Number'].errors['required']"> <span>*</span> password is not valid </p>
+                                    <p *ngIf="BookForm.controls['Doctor_Number'].errors['pattern']"><span>*</span> You must Start Capital char and minumm 8 char  </p>
         
                                 </div>
                             </div>
                              
-                            <div>
+                            <!-- <div>
                                 <input accept="image/*" id="img"   formControlName="image" class="pass d-none"placeholder="" type="file">
                                 <label class="upimg text-center" for="img">
                                     <img src="../../assets/imgs/home/uploade 1.svg" alt="">
                                     <p>Drode your prescription image here</p>
                                 </label>
-                                <div  *ngIf="RegisterIncubationForm.controls['image'].errors&&RegisterIncubationForm.controls['image'].touched " class="emailvalidtion">
-                                    <p *ngIf="RegisterIncubationForm.controls['image'].errors['required']"> <span>*</span> password is not valid </p>
+                                <div  *ngIf="BookForm.controls['image'].errors&&BookForm.controls['image'].touched " class="emailvalidtion">
+                                    <p *ngIf="BookForm.controls['image'].errors['required']"> <span>*</span> password is not valid </p>
         
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <button class="btn">Next</button>
                             <p> Already have an account ?<span>  <a routerLink="/login"> Login </a> </span></p>

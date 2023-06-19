@@ -24,7 +24,6 @@ export class RigesterIncubatorComponent implements OnInit {
   
   (res)=>{
  
-    console.log(res)
     this.id=res.id
     this._Router.navigate(['/doctorRegister',this.id])
   

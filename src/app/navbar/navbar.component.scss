@@ -1,7 +1,7 @@
 nav{
 background: linear-gradient(180deg, #01909A 0%, rgba(255, 255, 255, 0) 130%);
-
-display: flex;
+position: relative;
+display: flex ;
 align-items: center;
 padding: 10px 25px ;
 
@@ -94,4 +94,90 @@ opacity: 1;
 }
 .logout{
  cursor: pointer; 
+}
+.list{
+  display: none;
+  position: absolute;
+  top: 3%;
+  right: 15%;
+  font-size: 35px;
+  color: #2d1395;
+  z-index: 99;
+  cursor: pointer;
+}
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+.contatin{
+width: 85%;
+}
+.links{
+
+li{
+
+a{
+
+width: 115px !important;
+}
+}
+}
+.profile{
+width: 80px;
+}  
+}
+
+@media screen and (min-width:768px)and (max-width:992px) {
+ nav{
+  display: grid;
+  text-align: center;
+
+ } 
+ .contatin,.links{
+  display: grid !important;
+  justify-content: center !important;
+
+  text-align: center;
+
+ } 
+ .list{
+  display: block;
+ }
+}
+@media screen and (min-width:500px)and (max-width:768px) {
+  nav{
+    display: grid;
+    text-align: center;
+  
+   } 
+   .contatin,.links{
+    display: grid !important;
+    justify-content: center !important;
+  
+    text-align: center;
+  
+   } 
+   .list{
+    display: block;
+   }
+  
+}
+@media screen and (min-width:360px)and (max-width:500px) {
+ 
+  nav{
+    display: grid;
+    text-align: center;
+  
+   } 
+   .contatin,.links{
+    display: grid !important;
+    justify-content: center !important;
+  
+    text-align: center;
+  
+   } 
+   .list{
+    display: block;
+   }
+   .Account{
+    right: -35%;
+   }
 }

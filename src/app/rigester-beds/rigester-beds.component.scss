@@ -14,7 +14,7 @@
    }
    .rightLogin{
    position: absolute;
-   overflow-y: scroll;
+   overflow-y: hidden;
    top: 0%;
    right: 0%;
    bottom: 0%;
@@ -178,4 +178,56 @@
     }
     
     
+    }
+
+    @media screen and (min-width:992px) and (max-width:1200px) {
+
+    }
+    
+    @media screen and (min-width:768px)and (max-width:992px) {
+    
+    
+    }
+    @media screen and (min-width:500px)and (max-width:768px) {
+    .collection{
+    width:83%;
+    margin: auto auto 50px 97px ;
+    
+    
+    }
+    .headerDoc{
+    margin-left: 20px;
+    } 
+    
+    }
+    @media screen and (min-width:360px)and (max-width:499px) {
+    .headerDoc{
+    margin-top: 50px;
+    margin-left: 200px;
+    }
+    .docHeader{
+    
+    width: 330px;
+    
+    }
+    .collection{
+    
+    width: 59% !important;
+    margin-left: 219px;
+    }
+    .name{
+    
+    width: 330px ;
+    
+    margin: 10px 0px 0px -5px !important;
+    }
+    .btn{
+    margin: 30px 0px 30px 200px !important;
+    }
+    .cost{
+        width: 230px ;
+    }
+    .tittle{
+        font-size: 18px !important;
+    }
     }

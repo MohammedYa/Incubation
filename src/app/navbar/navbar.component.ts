@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthPersonService } from '../auth-person.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-
+declare var $:any
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -68,5 +67,30 @@ export class NavbarComponent implements OnInit{
         }
       }
     )
-  }
+  
+
+  //   $("#list").slideUp(0)
+  // $('#list-icon').on('click', function(){
+   
+  //   $("#list").slideToggle(1000)
+  //   })
+  // $("#list-icon").on( "click", function() {
+  //       $("#list"). slideToggle(1000);
+  //     })
+  
+  //   $(window).ready(function() {
+  //     $(window).resize(function() {
+  //       let windowsize = $(window).width();
+  //       if (windowsize >= 360 && windowsize < 992) {
+  //             $("#list").slideDown();
+
+  //       }
+  //       else{
+  //             $("#list").slideUp();
+
+  //       }
+  //     });});
+    
+    
+}
 }

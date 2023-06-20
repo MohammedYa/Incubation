@@ -26,6 +26,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { DoctorsHomeComponent } from './doctors-home/doctors-home.component';
 import { BookingForIncComponent } from './booking-for-inc/booking-for-inc.component';
 import { BookingForPersonComponent } from './booking-for-person/booking-for-person.component';
+import { SearchPipe } from './search.pipe';
 @NgModule({
   declarations: [
       AppComponent,
@@ -50,7 +51,8 @@ import { BookingForPersonComponent } from './booking-for-person/booking-for-pers
       NotfoundComponent,
       DoctorsHomeComponent,
       BookingForIncComponent,
-      BookingForPersonComponent
+      BookingForPersonComponent,
+      SearchPipe
   ],
   imports: [
     HttpClientModule,

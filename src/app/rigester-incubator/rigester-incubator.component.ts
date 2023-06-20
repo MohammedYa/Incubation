@@ -21,9 +21,10 @@ export class RigesterIncubatorComponent implements OnInit {
   
   supmitRegisterIncubation(form:FormGroup){
   this._RegisterService.registerIncubator(form.value).subscribe(
-  
-  (res)=>{
- 
+
+  (res)=>{ 
+    localStorage.setItem("UserToken",res.token)
+
     this.id=res.id
     this._Router.navigate(['/doctorRegister',this.id])
   

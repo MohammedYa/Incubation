@@ -30,6 +30,10 @@
         </div> -->
         <div class="near">
 
+
+            <div class="scerch">
+                <input  class="email"placeholder="Search For Incubation By city  " type="email">
+            </div>
             <h2>Nearest  Incubation</h2>
             <div class="item" *ngFor="let Icubator of Incubators">
                 <a [routerLink]="['/incubation-page',Icubator.id]">

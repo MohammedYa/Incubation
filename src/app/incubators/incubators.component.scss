@@ -216,3 +216,36 @@ color: #f00;
   line-height: 48px;
   font-size: 30px;
 }
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+  section{
+    margin: -61px auto 50px auto;
+}
+}
+
+@media screen and (min-width:768px)and (max-width:992px) {
+  section{
+    margin: -61px auto 50px auto;
+}
+    
+}
+@media screen and (min-width:500px)and (max-width:768px) {
+  section{
+    margin: -61px auto 50px auto;
+}
+  .count{
+    width: 85%;
+    height: 114px;
+  }
+}
+@media screen and (min-width:360px)and (max-width:500px) {
+  section{
+    margin: -61px auto 50px auto;
+}
+.count{
+  width: 95%;
+}
+.details{
+  font-size: 14px;
+}
+}

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { GetIncubatorService } from '../get-incubator.service';
+import { GetIncubatorService } from '../servies/get-incubator.service';
 import {  FormControl,FormGroup,Validators} from '@angular/forms';
-import { RegisterService } from '../register.service';
+import { RegisterService } from '../servies/register.service';
+import { ProgressIncService } from '../servies/progress-inc.service';
+
 @Component({
   selector: 'app-doctors-home',
   templateUrl: './doctors-home.component.html',
@@ -32,7 +34,7 @@ registerDoctorForm:FormGroup=new FormGroup({
      }
     })
   }
-constructor(private _GetIncubatorService:GetIncubatorService ,private _RegisterService:RegisterService) {}
+constructor(private _GetIncubatorService:GetIncubatorService ,private _RegisterService:RegisterService,private _ProgressIncService:ProgressIncService) {}
 
 getDoctors(){
   this._GetIncubatorService.getIncubatorDoctors(this.IncToken).subscribe(
@@ -41,7 +43,15 @@ getDoctors(){
     }
   )
 }
+delete(id:string){
+  this._ProgressIncService.deleteDoctor(id).subscribe((res)=>{
+    if(res.isSuccess){
+      this.getDoctors()
+    }
+  })
+}
 ngOnInit(): void {
   this.getDoctors()
 }
+
 }

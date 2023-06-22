@@ -39,7 +39,7 @@ const routes: Routes = [
   {path:'IncubatorHome',canActivate:[AuthGuard],component:IncubatorsComponent},
   {path:'personHome',canActivate:[AuthGuard],component:HomePersonComponent},
   {path:'incubation-page/:id',canActivate:[AuthGuard],component:IncubatorDetailsComponent},
-  {path:'book',canActivate:[AuthGuard],component:BookIncubatorComponent},
+  {path:'book/:id',canActivate:[AuthGuard],component:BookIncubatorComponent},
   {path:'BookInc',canActivate:[AuthGuard],component:BookingForIncComponent},
   {path:'BookPerson',canActivate:[AuthGuard],component:BookingForPersonComponent},
   {path:'available-bed',canActivate:[AuthGuard],component:AvilableBedComponent},

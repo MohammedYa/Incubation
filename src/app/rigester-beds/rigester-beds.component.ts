@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 import { Router ,ActivatedRoute} from '@angular/router';
-import { RegisterService } from '../register.service';
+import { RegisterService } from '../servies/register.service';
 
 declare var $:any;
 

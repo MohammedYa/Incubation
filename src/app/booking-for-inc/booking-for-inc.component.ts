@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetIncubatorService } from '../get-incubator.service';
+import { GetIncubatorService } from '../servies/get-incubator.service';
 
 @Component({
   selector: 'app-booking-for-inc',

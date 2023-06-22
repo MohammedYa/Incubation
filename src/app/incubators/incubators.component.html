@@ -2,7 +2,7 @@
 
     <div class="headerDoc">
         <h3 class="">Beds</h3>
-        <i id='add' class="fa-solid fa-plus "  data-bs-toggle="modal" data-bs-target="#exampleModal" ></i>
+        <i id='add' class="fa-solid fa-plus "  data-bs-toggle="modal" data-bs-target="#AddBed" ></i>
     </div>
    <div  *ngFor="let bed of beds"> 
     <a class="count" >
@@ -27,7 +27,7 @@
 
           </ul>
       </div> 
-        <i class="fa-solid fa-trash-can  delete" style="color: #d21919;"></i>
+        <i class="fa-solid fa-trash-can  delete" (click)="delete(bed.id)" style="color: #d21919;"></i>
         <i class="fa-solid fa-wrench     update" style="color: #32d31d;"></i>
     
       
@@ -43,7 +43,7 @@
 
 
 <!--  model   -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddBed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

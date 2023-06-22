@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthPersonService } from '../auth-person.service';
+import { AuthPersonService } from '../servies/auth-person.service';
 import { Router } from '@angular/router';
 declare var $:any
 @Component({

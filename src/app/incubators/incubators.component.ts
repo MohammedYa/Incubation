@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GetIncubatorService } from '../get-incubator.service';
+import { GetIncubatorService } from '../servies/get-incubator.service';
 import {  FormControl,FormGroup,Validators} from '@angular/forms';
-import { RegisterService } from '../register.service';
+import { RegisterService } from '../servies/register.service';
+import { ProgressIncService } from '../servies/progress-inc.service';
 
 @Component({
   selector: 'app-incubators',
@@ -29,33 +30,46 @@ changeStatusUn(){
   this.okstatus=false
 
 }
-  registerBedForm:FormGroup=new FormGroup({
-    "typeofBed":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
-    "condition":new FormControl(null,[Validators.required]),
-    "costPerDay":new FormControl(null,[Validators.required,Validators.min(100)]),
-    "incubatorId": new FormControl(this.IncInfo.id)
-  })
-  supmitBedsForm(form:FormGroup){
-    this._RegisterService.registerBed(form.value).subscribe(
-      (res)=>{
-        if(res.isSuccess) {
-        }
-        else{
-         this.errors="cheek Your Forms some Data  Doctor is oready Register"
-     
-        }
-      }
-    )
+registerBedForm:FormGroup=new FormGroup({
+"typeofBed":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
+"condition":new FormControl(null,[Validators.required]),
+"costPerDay":new FormControl(null,[Validators.required,Validators.min(100)]),
+"incubatorId": new FormControl(this.IncInfo.id)
+})
+supmitBedsForm(form:FormGroup){
+  console.log(form)
+this._RegisterService.registerBed(form.value).subscribe(
+  (res)=>{
+    if(res.isSuccess) {
+      this.getIncupator()
+      setTimeout(() => {
+        
+      },2000 );
+    }
+    else{
+      this.errors="cheek Your Forms some Data  Doctor is oready Register"
+  
+    }
   }
+)
+}
 getIncupator(){
 this._GetIncubatorService.getIncurBed(this.IncToken).subscribe((res)=>{
+console.log(res)
 this.beds=res
 })
- }
-constructor(private _GetIncubatorService:GetIncubatorService,private _RegisterService:RegisterService) {
+}
+constructor(private _GetIncubatorService:GetIncubatorService,private _RegisterService:RegisterService,private _ProgressIncService:ProgressIncService) {
   this.getIncupator()
 }
 ngOnInit(): void {
   
+}
+delete(id:string){
+  this._ProgressIncService.deleteBed(id).subscribe((res)=>{
+    if(res.isSuccess){
+      this.getIncupator()
+    }
+  })
 }
 }

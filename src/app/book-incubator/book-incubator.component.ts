@@ -1,6 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { BookProgressService } from '../servies/book-progress.service';
 declare var $:any;
+import { Router ,ActivatedRoute} from '@angular/router';
+import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-book-incubator',
@@ -8,32 +11,82 @@ declare var $:any;
   styleUrls: ['./book-incubator.component.scss']
 })
 export class BookIncubatorComponent  implements OnInit{
-
+Id:number=this._ActivatedRoute.snapshot.params['id']
+id:string=`${this.Id}`
+imgsrc:string="assets/imgs/home/uploade 1.svg"
+url:string=''
+BaseUrl:string=<string>localStorage.getItem("url")
 
   BookForm:FormGroup=new FormGroup({
-    // 'available':new FormControl(null,[Validators.required]),
-    'Mather_Name':new FormControl(null,[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
-    'Child_Name':new FormControl(null,[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
-    'Date_of_birth':new FormControl(null,[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
-    'Type_of_illness':new FormControl(null,[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
-    'Phone_Number':new FormControl(null,[Validators.required,Validators.email]),
-    'Doctor_Number':new FormControl(null,[Validators.required,Validators.pattern(/^[A-Za-z0-9]{8,}$/)]),
-    // 'image':new FormControl(null,[Validators.required,Validators.pattern(/^[A-Za-z0-9]{8,}$/)])
-    })
+    'motherName':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
+    'childName':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
+    'age':new FormControl(null,[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
+    'typeofIllness':new FormControl(null,[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
+    'phoneNumber':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
+    'phoneNumberofDoctor':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
+    'bookerEmail':new FormControl(null,[Validators.required,Validators.email]),
+    "incubatorId":new FormControl(this.id),
+    "prescriptionUrl":new FormControl(this.BaseUrl,[Validators.required])
+})
     
-    supmitRegisterIncubation(BookForm:FormGroup){
+supmitRegisterIncubation(BookForm:FormGroup){
       console.log(BookForm.value)
-    }
+      console.log(typeof(this.BaseUrl))
+
+      this._BookProgressService.bookIncubator(BookForm.value).subscribe(
+        (res)=>{
+          console.log(res)
+        }
+      )
+}
   
-    ngOnInit(): void {
-      
-  
-      // $("#info").slideUp(0)
-      // $('#drop').on('click', function(){
-      //   $('#down').toggleClass('fa-chevron-up')
-      //   $('#down').toggleClass('fa-chevron-down')
-      //   $("#info").slideToggle(1000)
-      //  })
+  constructor(private _BookProgressService:BookProgressService,private _ActivatedRoute:ActivatedRoute){}
+ 
+  onchange(e:any) {
+    if(e.target.files){
+       const file =e.target.files[0]
+       this.convertToBase64(file)
     }
   }
+  convertToBase64(file:File){
+    const obsarvable=new Observable((subscriber:Subscriber<any>)=>{
+      this.readFile(file,subscriber)
+    })
+
+    obsarvable.subscribe((d)=>{
+      localStorage.setItem("url",d)
+      this.url=d
+    })
+  } 
+   readFile(file:File,subscriber:Subscriber<any>){
+    const fileReader=new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload=()=>{
+      subscriber.next(fileReader.result)
+      subscriber.complete()
+    },
+    fileReader.onerror=(error)=>{
+      subscriber.error(error)
+      subscriber.complete()
+
+    }
+   }
+
+   destroyBaseUrl(){
+    localStorage.removeItem("url")
+   } 
+   ngOnInit(): void {
+
+    // $("#info").slideUp(0)
+    // $('#drop').on('click', function(){
+    //   $('#down').toggleClass('fa-chevron-up')
+    //   $('#down').toggleClass('fa-chevron-down')
+    //   $("#info").slideToggle(1000)
+    //  })
+
+  
+  }
+} 
+  
+
   

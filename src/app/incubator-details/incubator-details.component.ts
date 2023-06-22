@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetIncubatorService } from '../get-incubator.service';
+import { GetIncubatorService } from '../servies/get-incubator.service';
 
 @Component({
   selector: 'app-incubator-details',

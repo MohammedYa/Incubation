@@ -1,6 +1,6 @@
 import {  Component,OnInit} from '@angular/core';
 import {  FormControl,FormGroup,Validators,FormArray,FormBuilder} from '@angular/forms';
-import { RegisterService } from '../register.service';
+import { RegisterService } from '../servies/register.service';
 import { Router ,ActivatedRoute} from '@angular/router';
 declare var $:any;
 @Component({

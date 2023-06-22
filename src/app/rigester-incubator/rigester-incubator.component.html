@@ -40,6 +40,14 @@
                         </div>
                     </div>
                    
+                    <div>
+                        <select formControlName="gevernorate" class="select ">
+
+                            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                          </select>
+                        
+                          
+                    </div>
                     <div >
                         <input formControlName="email" class="email"placeholder="Email" type="email">
                         <div  *ngIf="RegisterIncubationForm.controls['email'].errors&&RegisterIncubationForm.controls['email'].touched " class="emailvalidtion">

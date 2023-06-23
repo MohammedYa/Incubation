@@ -216,7 +216,10 @@ color: #f00;
   line-height: 48px;
   font-size: 30px;
 }
-
+.modelhide{
+  position: sticky !important;
+   opacity: 0 !important;; 
+}
 @media screen and (min-width:992px) and (max-width:1200px) {
   section{
     margin: -61px auto 50px auto;

@@ -28,7 +28,7 @@
           </ul>
       </div> 
         <i class="fa-solid fa-trash-can  delete" (click)="delete(bed.id)" style="color: #d21919;"></i>
-        <i class="fa-solid fa-wrench     update" style="color: #32d31d;"></i>
+        <i class="fa-solid fa-wrench     update" style="color: #32d31d;"(click)="update(bed.id)" data-bs-toggle="modal" data-bs-target="#UpDateBed"></i>
     
       
     </a>
@@ -129,4 +129,91 @@
        
       </div>
     </div>
-  </div>
+</div>
+<div class="modal fade" id="UpDateBed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Up Date Bed</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body p-0">
+        <div  class="doctors mt-5">
+
+        
+    
+            <div class="fields" >
+                
+                <div >
+                    <div class="forms">
+                        <form [formGroup]="updateBedForm" (ngSubmit)="upDatebed(updateBedForm)">
+                            <div id="doctors">
+
+                            
+                            <div  class="collection">
+
+                            
+                            
+                            <div id="info" class="infoDoctor">
+
+                            
+                            <div class="inputCollection">
+                                <input formControlName="typeofBed" class="name tybe"placeholder="Tybe Of Bed " type="text">
+                                
+                            </div>  
+                            <div  *ngIf="updateBedForm.controls['typeofBed'].errors&&updateBedForm.controls['typeofBed'].touched " class="emailvalidtion">
+                                    <p *ngIf="updateBedForm.controls['typeofBed'].errors['minlength']"> <span>*</span> Tybe Of Bed you must contain min length 3 </p>
+                                    <p *ngIf="updateBedForm.controls['typeofBed'].errors['required']"> <span>*</span> Tybe Of Bed is required </p>
+                                    <p  *ngIf="updateBedForm.controls['typeofBed'].errors['maxlength']"><span>*</span> Tybe Of Bed you must contain Max length 20  </p>
+        
+                            </div>
+                            
+                            <div class="inputCollection">
+                                <label (click)="changeStatusOk2()"[ngClass]="{available:okstatus2}" for="available" class="email  ">
+                                    <input class="d-none"type="radio" formControlName="case" id="available" value="available">
+                                    Available
+                                </label>
+                                <label  (click)="changeStatusUn2()"[ngClass]="{unavailable:Unstatus2}"for="unavailable" class="email unavailable">
+                                    <input class="d-none" type="radio" formControlName="case"id='unavailable' value="unavailable">
+                                    Unavailable
+                                </label>
+                                
+                            </div>
+                            <div  *ngIf="updateBedForm.controls['case'].errors&&updateBedForm.controls['case'].touched " class="emailvalidtion">
+                                    <p *ngIf="updateBedForm.controls['case'].errors['required']"> <span>*</span>condition is required </p>
+        
+                            </div>
+
+                            <div class="inputCollection">
+                                <label class="tittle" for="">Cost per day</label>
+
+                                <input  formControlName="costPerDay" class="pass"placeholder="" type="text">
+                                
+                            </div>
+                            <div  *ngIf="updateBedForm.controls['costPerDay'].errors&&updateBedForm.controls['costPerDay'].touched " class="emailvalidtion">
+                                    <p *ngIf="updateBedForm.controls['costPerDay'].errors['minlength']"> <span>*</span> costPerDay you must contain min length 3 </p>
+                                    <p *ngIf="updateBedForm.controls['costPerDay'].errors['required']"> <span>*</span>costPerDay is required </p>
+        
+                            </div>
+                            </div> 
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button [disabled]="updateBedForm.invalid"  class="btn">Up date</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+
+        </div>
+
+    </div>
+    
+    </div>
+</div>
+</div>

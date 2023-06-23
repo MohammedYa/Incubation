@@ -2,7 +2,7 @@
 
     <div class="headerDoc">
         <h3 class="">Doctors</h3>
-        <i id='add' class="fa-solid fa-plus "  data-bs-toggle="modal" data-bs-target="#exampleModal" ></i>
+        <i id='add' class="fa-solid fa-plus "  data-bs-toggle="modal" data-bs-target="#addDoc" ></i>
     </div>
     <div  *ngFor="let doctor of Doctors"> 
      <a class="count" >
@@ -28,7 +28,7 @@
            </ul>
        </div>  
        <i class="fa-solid fa-trash-can  delete" (click)="delete(doctor.id)" style="color: #d21919;"></i>
-       <i class="fa-solid fa-wrench     update" style="color: #32d31d;"></i>
+       <i class="fa-solid fa-wrench     update" style="color: #32d31d;"(click)="update(doctor.id)" data-bs-toggle="modal" data-bs-target="#update"></i>
      
      </a>
          
@@ -42,7 +42,7 @@
  </section>
 
 <!--  model   -->
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="addDoc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -122,4 +122,84 @@
        
       </div>
     </div>
-  </div>
+</div>
+<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">UpDate Doctor</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body p-0">
+        <div class="doctors mt-5">
+
+
+
+            <div class="fields">
+
+                <div class="forms">
+                    <form [formGroup]="UpdateDoctorForm" (ngSubmit)="updateDoctorForm(UpdateDoctorForm)">
+                        
+                        <div  id="doctors" >
+
+
+                            <div  class="collection">
+
+
+                                <div id="info" class="infoDoctor">
+
+
+                                    <div>
+                                        <input id="name" formControlName="name" class="name" placeholder=" Name" type="text">
+                                        <div  *ngIf="UpdateDoctorForm.controls['name'].errors&&UpdateDoctorForm.controls['name'].touched " class="emailvalidtion">
+                                            <p *ngIf="UpdateDoctorForm.controls['name'].errors['minlength']"> <span>*</span> FullName you must contain min length 3 </p>
+                                            <p *ngIf="UpdateDoctorForm.controls['name'].errors['required']"> <span>*</span> FullName is required </p>
+                                            <p  *ngIf="UpdateDoctorForm.controls['name'].errors['maxlength']"><span>*</span> FullName you must contain Max length 20  </p>
+                
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <input id="number" formControlName="phoneNumber" class="email" placeholder="Number"
+                                            type="text">
+                                            <div   *ngIf="UpdateDoctorForm.controls['phoneNumber'].errors&&UpdateDoctorForm.controls['phoneNumber'].touched " class="emailvalidtion">
+                                                <p *ngIf="UpdateDoctorForm.controls['phoneNumber'].errors['required']"> <span>*</span> Phone is required </p>
+                                                <p *ngIf="UpdateDoctorForm.controls['phoneNumber'].errors['pattern']"><span>*</span>phone is not valid   </p>
+                    
+                                            </div>
+                                    </div>
+
+                                    <div>
+                                        <input id="Specialization" formControlName="specialization" class="pass"
+                                            placeholder="specialization" type="text">
+                                            <div *ngIf="UpdateDoctorForm.controls['specialization'].errors&&UpdateDoctorForm.controls['specialization'].touched " class="emailvalidtion">
+                                                <p *ngIf="UpdateDoctorForm.controls['specialization'].errors['minlength']"> <span>*</span> specialization you must contain min length 3 </p>
+                                                <p *ngIf="UpdateDoctorForm.controls['specialization'].errors['required']"> <span>*</span> specialization is required </p>
+                                                <p *ngIf="UpdateDoctorForm.controls['specialization'].errors['maxlength']"><span>*</span> specialization you must contain Max length 20  </p>
+                    
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button [disabled]="UpdateDoctorForm.invalid" class="btn">Update</button>
+                            </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    
+    </div>
+</div>
+</div>

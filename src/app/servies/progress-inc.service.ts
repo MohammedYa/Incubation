@@ -21,6 +21,12 @@ deleteDoctor(id: string ): Observable<any> {
   const token = JSON.stringify(localStorage.getItem("UserToken"));
   return this._HttpClient.delete(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/DeleteDoctor?id=${id}`, {body:token});
 }
+updateBed(id:string,obj:any):Observable<any>{
+return this._HttpClient.put(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/UpdateBed?id=${id}`,obj)
+}
+updateDoc(id:string,obj:any):Observable<any>{
+  return this._HttpClient.put(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/UpdateDoctor?id=${id}`,obj)
+  }
 
 
 }

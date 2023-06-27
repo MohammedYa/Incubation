@@ -27,6 +27,7 @@ import { DoctorsHomeComponent } from './doctors-home/doctors-home.component';
 import { BookingForIncComponent } from './booking-for-inc/booking-for-inc.component';
 import { BookingForPersonComponent } from './booking-for-person/booking-for-person.component';
 import { SearchPipe } from './search.pipe';
+import { UpdateComponent } from './update/update.component';
 @NgModule({
   declarations: [
       AppComponent,
@@ -52,7 +53,8 @@ import { SearchPipe } from './search.pipe';
       DoctorsHomeComponent,
       BookingForIncComponent,
       BookingForPersonComponent,
-      SearchPipe
+      SearchPipe,
+      UpdateComponent
   ],
   imports: [
     HttpClientModule,

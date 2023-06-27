@@ -34,11 +34,15 @@ registerBedForm:FormGroup=new FormGroup({
 "typeofBed":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
 "condition":new FormControl(null,[Validators.required]),
 "costPerDay":new FormControl(null,[Validators.required,Validators.min(100)]),
-"incubatorId": new FormControl(this.IncInfo.id)
 })
 supmitBedsForm(form:FormGroup){
-  console.log(form)
-this._RegisterService.registerBed(form.value).subscribe(
+  let Bed={
+    typeofBed:form.value.typeofBed,
+    condition:form.value.condition,
+    costPerDay:form.value.costPerDay,
+    incubatorId:this.IncInfo.id
+  }
+this._RegisterService.registerBed(Bed).subscribe(
   (res)=>{
     if(res.isSuccess) {
       this.getBed()

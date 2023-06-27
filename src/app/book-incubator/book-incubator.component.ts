@@ -3,7 +3,7 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
 import { BookProgressService } from '../servies/book-progress.service';
 declare var $:any;
 import { Router ,ActivatedRoute} from '@angular/router';
-import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
+import {  Observable, Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-book-incubator',
@@ -15,7 +15,7 @@ Id:number=this._ActivatedRoute.snapshot.params['id']
 id:string=`${this.Id}`
 imgsrc:string="assets/imgs/home/uploade 1.svg"
 url:string=''
-BaseUrl:string=<string>localStorage.getItem("url")
+// BaseUrl:string=
 
   BookForm:FormGroup=new FormGroup({
     'motherName':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
@@ -24,23 +24,24 @@ BaseUrl:string=<string>localStorage.getItem("url")
     'typeofIllness':new FormControl(null,[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
     'phoneNumber':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
     'phoneNumberofDoctor':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
-    'bookerEmail':new FormControl(null,[Validators.required,Validators.email]),
-    "incubatorId":new FormControl(this.id),
-    "prescriptionUrl":new FormControl(this.BaseUrl,[Validators.required])
+    "userDateId":new FormControl(this.id),
+    "prescriptionUrl":new FormControl(<string>localStorage.getItem("url"),[Validators.required])
 })
     
 supmitRegisterIncubation(BookForm:FormGroup){
-      console.log(BookForm.value)
-      console.log(typeof(this.BaseUrl))
+     
 
-      this._BookProgressService.bookIncubator(BookForm.value).subscribe(
+
+      this._BookProgressService.addBaby(BookForm.value).subscribe(
         (res)=>{
-          console.log(res)
+          if(res.isSuccess){
+            this._Router.navigate(['/login'])
+          }
         }
       )
 }
   
-  constructor(private _BookProgressService:BookProgressService,private _ActivatedRoute:ActivatedRoute){}
+  constructor(private _BookProgressService:BookProgressService,private _ActivatedRoute:ActivatedRoute,private _Router:Router){}
  
   onchange(e:any) {
     if(e.target.files){
@@ -72,9 +73,7 @@ supmitRegisterIncubation(BookForm:FormGroup){
     }
    }
 
-   destroyBaseUrl(){
-    localStorage.removeItem("url")
-   } 
+   
    ngOnInit(): void {
 
     // $("#info").slideUp(0)

@@ -10,12 +10,17 @@ import { Router } from '@angular/router';
 })
 export class RegisterPersonComponent implements OnInit {
  errors:string=''
+ options: string[] = ["Cairo","Alexandria","Aswan","Asyut","Beheira","Beni Suef","Dakahlia","Damietta","Faiyum","Gharbia","Giza"
+ ,"Ismailia","Kafr El Sheikh","Luxor","Matruh","Minya","Monufia","New Valley","North Sinai","Port Said","Qalyubia",
+ "Qena","Red Sea","Sharqia","Sohag","South Sinai","Suez"];
   RegisterPersonForm:FormGroup=new FormGroup({
     'displayName':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
     'phoneNumber':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
     'city':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
     'email':new FormControl(null,[Validators.required,Validators.email]),
-    'password':new FormControl(null,[Validators.required,Validators.pattern(/^[A-Za-z0-9]{8,}$/)])
+    'password':new FormControl(null,[Validators.required,Validators.pattern(/^[A-Za-z0-9]{8,}$/)]),
+    "gevernorate":new FormControl("Cairo")
+
   })
   
   supmitRegisterPerson(form:FormGroup){
@@ -25,8 +30,8 @@ export class RegisterPersonComponent implements OnInit {
       
     (res)=>{
    
-      this._Router.navigate(['/login'])
-    
+      this._Router.navigate(['/book',res.id])
+      console.log(res)
     }
     ,
     (error)=>{

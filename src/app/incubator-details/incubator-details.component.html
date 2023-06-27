@@ -2,6 +2,7 @@
     <div class="box-img">
       <div class="layer">
         <h2>{{Incubator.name}}</h2>
+        <h3 class="location">{{Incubator.city}}</h3>
       </div>
     </div>
   
@@ -15,7 +16,7 @@
               adipiscing elit . lorem ipsum dolor sit amet consectetur adipiscing elit . lorem ipsum dolor sit amet
               consectetur adipiscing elit .lorem ipsum dolor sit amet consectetur adipiscing elit . lorem ipsum dolor sit
               amet consectetur adipiscing elit . lorem ipsum dolor sit amet consectetur adipiscing elit .</p>
-              <a [routerLink]="['/book',Incubator.id]" class="zrar">Book</a>
+              <a (click)="createBook(Incubator.id)" class="zrar">Book</a>
           </div>
         </div>
   

@@ -1,0 +1,61 @@
+<section class="login">
+    <div class="pictur ">
+        <div class="layer"></div>
+    </div>
+    <div class="rightLogin">
+        <div class="count">
+            <div class="m-auto ">
+            <img src="../../assets/imgs/login/logo color 1.png" alt="">
+            </div>   
+           <!-- <h6 *ngIf="errors" class="bg-danger  error ">{{errors}}</h6> -->
+
+            <div class="forms">
+                <form [formGroup]="UpdateForm"  (ngSubmit)="supmitUpdateform(UpdateForm)" action="">
+                   
+                    <div >
+                        <input formControlName="displayName" class="name"placeholder="Full Name" type="text">
+                        <div  *ngIf="UpdateForm.controls['displayName'].errors&&UpdateForm.controls['displayName'].touched " class="emailvalidtion">
+                            <p *ngIf="UpdateForm.controls['displayName'].errors['minlength']"> <span>*</span> FullName you must contain min length 3 </p>
+                            <p *ngIf="UpdateForm.controls['displayName'].errors['required']"> <span>*</span> FullName is required </p>
+                            <p *ngIf="UpdateForm.controls['displayName'].errors['maxlength']"><span>*</span> FullName you must contain Max length 20  </p>
+
+                        </div>
+                    </div>  
+
+                    <div>
+                        <input formControlName="phoneNumber" class="pass"placeholder="Phone Number" type="text">
+                        <div  *ngIf="UpdateForm.controls['phoneNumber'].errors&&UpdateForm.controls['phoneNumber'].touched " class="emailvalidtion">
+                            <p *ngIf="UpdateForm.controls['phoneNumber'].errors['required']"> <span>*</span> Phone is required </p>
+                            <p *ngIf="UpdateForm.controls['phoneNumber'].errors['pattern']"><span>*</span>password is not valid   </p>
+
+                        </div>
+                    </div>
+                   
+                    <div>
+                        <input formControlName="city" class="pass"placeholder="City" type="text">
+                        <div  *ngIf="UpdateForm.controls['city'].errors&&UpdateForm.controls['city'].touched " class="emailvalidtion">
+                            <p *ngIf="UpdateForm.controls['city'].errors['minlength']"> <span>*</span> city you must contain min length 3 </p>
+                            <p *ngIf="UpdateForm.controls['city'].errors['required']"> <span>*</span> city is required </p>
+                            <p *ngIf="UpdateForm.controls['city'].errors['maxlength']"><span>*</span> city you must contain Max length 20  </p>
+
+                        </div>
+                    </div>
+                   
+                    <div >
+                        <input formControlName="email" class="email"placeholder="Email" type="email">
+                        <div  *ngIf="UpdateForm.controls['email'].errors&&UpdateForm.controls['email'].touched " class="emailvalidtion">
+                            <p *ngIf="UpdateForm.controls['email'].errors['email']"> <span>*</span> Email is not valid </p>
+
+                        </div>
+                    </div>
+                    
+                    
+                   
+                    <button [disabled]="UpdateForm.invalid" class="btn">update</button>
+                </form>
+            </div>
+        </div>
+       
+
+    </div>
+</section>

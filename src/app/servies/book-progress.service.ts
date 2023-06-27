@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable ,BehaviorSubject} from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,9 @@ export class BookProgressService {
       form,
       { headers: headers }
     );
+  }
+  addBaby(form: any): Observable<any> {
+    return this._HttpClient.post('http://sayedazp-001-site1.gtempurl.com/api/Incubator/AddChild',form );
   }
   
 }

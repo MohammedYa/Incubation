@@ -1,180 +1,180 @@
 
 
 .login{
-   
-    height: 160vh;
-    position: relative;
-    background-image: url('../../assets/imgs/login/personAuth.png');
-    background-size:cover;
-    background-position: center center;
-    inset: 0;
-    background-repeat: no-repeat;
-    }
-    .pictur{
-    
-    
-    .layer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(233.06deg, rgba(0, 255, 239, 0.31) 0%, rgba(1, 144, 154, 0.31) 100%);}
-    
-    }
-    .rightLogin{
-    
-    margin: 70px 0px;
-    padding-top: 50px;
-    width: 580px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    .forms{
-    
-    form{
-        display: grid;
-        gap: 10px;
-        text-align: -webkit-center;
-    }
-    .nameCollection{
-    
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    div{
-    width: fit-content;
-    }
-    .name{
-    width: 223px;
-    height: 46px;
-    }
-    }
-    .email,.pass,.name{
-    padding: 21px;
-    width: 462px;
-    height: 47px;
-    border: 1px solid #A4A4A4 ;
-    color: #00FFEF !important;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    margin: 10px 0px;
-    }
-    
-    .email:focus,.pass:focus,.name:focus{
-    
-    outline: none !important;
-    border-color: #00FFEF;
-    }
-    .email:focus::placeholder,.pass:focus::placeholder,.name:focus::placeholder{
-    color: #00FFEF;
-    
-    }
-    .email::placeholder,.pass::placeholder,.name::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #A4A4A4;
-    opacity: 1; /* Firefox */
-    } 
-    .btn{
-    color: #fff;
-    display: block;
-    width: 215px;
-    height: 47px;
-    background: linear-gradient(90deg, #00FFEF -49.62%, #01909A 100%);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    margin: 30px auto;
-    
-    }
-    .forget{
-    display: block;
-    width: 100%;
-   
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: right;
-    color: #A4A4A4;
-    
-    text-decoration: none;
-    }
-    p{
-    
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    color: #A4A4A4;
-    span a{
-    text-decoration: none;
-    color: #01909A;
-    }
-    }
-    }
-    }
-    .emailvalidtion{
-    text-align: left; 
-    p{
-    
-    font-size: 15px !important;
-    margin: 0px !important;
-    span{
-    color: #f00;
-    }
-    }
-    
-    
-    }
-    .collection{
-      border: #00FFEF 1px solid; 
-      border-radius: 30px !important;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-      width: 462px;
-      margin: auto;
-    }
-    .docHeader{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 7px 20px;
-       
-        cursor: pointer;
-        color: #00FFEF !important;
-        font-size: 28px;
-    }
-    .infoDoctor{
-        width: 462px;
-      height: 115px;
-     
-        .inputCollection{
-         display: flex;
-         justify-content: space-evenly;
-         align-items: center;
-         input{
-            padding: 0% !important;
-            width: 105px !important;
-            height: 91px !important;
-            background: #93BC39;
-            border: 1px solid #D9D9D9;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-            border-radius: 15px;
-         }
-         .avilable{
-    
-            background-color: #93BC39;;
-           }
-           .unavilable{
-            background-color:#EE3E54;
-        
-           }
-     }
-    }
-    .upimg{
-       
+
+height: 160vh;
+position: relative;
+background-image: url('../../assets/imgs/login/personAuth.png');
+background-size:cover;
+background-position: center center;
+inset: 0;
+background-repeat: no-repeat;
+}
+.pictur{
+
+
+.layer{
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+inset: 0;
+background: linear-gradient(233.06deg, rgba(0, 255, 239, 0.31) 0%, rgba(1, 144, 154, 0.31) 100%);}
+
+}
+.rightLogin{
+
+// margin: 70px 0px;
+padding-top: 50px;
+width: 580px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #fff;
+.forms{
+
+form{
+display: grid;
+gap: 10px;
+text-align: -webkit-center;
+}
+.nameCollection{
+
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+div{
+width: fit-content;
+}
+.name{
+width: 223px;
+height: 46px;
+}
+}
+.email,.pass,.name{
+padding: 21px;
+width: 462px;
+height: 47px;
+border: 1px solid #A4A4A4 ;
+color: #00FFEF !important;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+margin: 10px 0px;
+}
+
+.email:focus,.pass:focus,.name:focus{
+
+outline: none !important;
+border-color: #00FFEF;
+}
+.email:focus::placeholder,.pass:focus::placeholder,.name:focus::placeholder{
+color: #00FFEF;
+
+}
+.email::placeholder,.pass::placeholder,.name::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: #A4A4A4;
+opacity: 1; /* Firefox */
+} 
+.btn{
+color: #fff;
+display: block;
+width: 215px;
+height: 47px;
+background: linear-gradient(90deg, #00FFEF -49.62%, #01909A 100%);
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 30px;
+margin: 30px auto;
+
+}
+.forget{
+display: block;
+width: 100%;
+
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+text-align: right;
+color: #A4A4A4;
+
+text-decoration: none;
+}
+p{
+
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+color: #A4A4A4;
+span a{
+text-decoration: none;
+color: #01909A;
+}
+}
+}
+}
+.emailvalidtion{
+text-align: left; 
+p{
+
+font-size: 15px !important;
+margin: 0px !important;
+span{
+color: #f00;
+}
+}
+
+
+}
+.collection{
+border: #00FFEF 1px solid; 
+border-radius: 30px !important;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+width: 462px;
+margin: auto;
+}
+.docHeader{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 7px 20px;
+
+cursor: pointer;
+color: #00FFEF !important;
+font-size: 28px;
+}
+.infoDoctor{
+width: 462px;
+height: 115px;
+
+.inputCollection{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+input{
+  padding: 0% !important;
+  width: 105px !important;
+  height: 91px !important;
+  background: #93BC39;
+  border: 1px solid #D9D9D9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+.avilable{
+
+  background-color: #93BC39;;
+  }
+  .unavilable{
+  background-color:#EE3E54;
+
+  }
+}
+}
+.upimg{
+
 width: 462px;
 height: 117px;
 
@@ -182,41 +182,40 @@ height: 117px;
 background: #FFFFFF;
 border: 1px solid #D9D9D9;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-    }
+}
 .imglayer{
-  position: relative;
+position: relative;
 }
 .imgcont{
-  height: 100%;
-  position: absolute;
-  inset: 0;
+height: 100%;
+inset: 0;
 }
 
 
 
 
-    @media screen and (min-width:992px) and (max-width:1200px) {
-   
-    }
-    
-    @media screen and (min-width:768px)and (max-width:992px) {
-      
-        
-    }
-    @media screen and (min-width:500px)and (max-width:768px) {
-     
-      
-    }
-    @media screen and (min-width:360px)and (max-width:500px) {
-      .rightLogin[_ngcontent-uqt-c16] {
-        margin: 0px 0px;
-        padding-top: 20px;
-        width: 350px !important;
-        
-    }
-    .email,.pass,.name{
-      
-      width: 340px !important;
-      
-      } 
-    }
+@media screen and (min-width:992px) and (max-width:1200px) {
+
+}
+
+@media screen and (min-width:768px)and (max-width:992px) {
+
+
+}
+@media screen and (min-width:500px)and (max-width:768px) {
+
+
+}
+@media screen and (min-width:360px)and (max-width:500px) {
+.rightLogin[_ngcontent-uqt-c16] {
+margin: 0px 0px;
+padding-top: 20px;
+width: 350px !important;
+
+}
+.email,.pass,.name{
+
+width: 340px !important;
+
+} 
+}

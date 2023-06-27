@@ -25,6 +25,8 @@ supmitLoginForm(form:FormGroup){
     localStorage.setItem("UserToken",res.token)
     localStorage.setItem("UserTybe",res.roleName)
     localStorage.setItem("UserInfo",JSON.stringify(res))
+    this.destroyBaseUrl()
+
     this._AuthPersonService.saveUserData(res.roleName)
     this.TypeOfUser=res.roleName
     if(this.TypeOfUser=="User"){
@@ -42,5 +44,7 @@ supmitLoginForm(form:FormGroup){
   ngOnInit(): void {
     
   }
-  
+  destroyBaseUrl(){
+    localStorage.removeItem("url")
+   } 
 }

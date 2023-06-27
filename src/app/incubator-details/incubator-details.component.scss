@@ -1,178 +1,190 @@
 .box-img {
-    background-image: url(../../assets/imgs/login/bed.png);
-    background-position: center center;
-    background-size: cover;
-    width: 100%;
-    height: 408px;
-    position: relative;
-  }
-  
-  .layer {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(265.41deg, rgba(0, 255, 239, 0.31) 0%, rgba(1, 144, 154, 0.31) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    h2 {
-      width: 291px;
-      height: 29px;
-      left: 579px;
-      top: 209px;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 48px;
-      color: #FFFFFF;
-    }
-  }
-  .zrar {
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 47px;
-    background: linear-gradient(90deg, #00FFEF -49.62%, #01909A 100%);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 30px;
-    margin: 30px 0px;
-    border: transparent;
-  }
-  .mapp {
-    
-    margin-top: 40px;
-  
-  }
-  .count{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  .heart {
-   
-    display: flex;
-    justify-content: end;
-    padding-bottom: 10px;
-    i{
-      margin: 2px;
-      color: #A4A4A4;
-  
-    }
-    .red{
-      color: rgb(196, 41, 41);
-    }
-  }
-  .caption{
-    margin-top: 40px;
-  }
-  .incub-info{
-    display: grid;
-      gap: 3px;
-  }
-  .incub-info p{
-  
-  width: 602px;
-  height: 363px;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 33px;
-  color: #A4A4A4;
-  }
-  .incub-info h3{
-  
-    width: 602px;  
-    font-weight: 600;
-    font-size: 35px;
-    line-height: 33px;
-    color: #01909A;
-    }
-
-    @media screen and (min-width:992px) and (max-width:1250px) {
-      .count {
-        justify-content: flex-start;
-        
-    }
-    .incub-info p {
-      font-size: 20px;
-      width:500px;
-    }
-    .incub-info h3 {
-      width: fit-content;
-    }
-    .mapouter {
-      
-      width: 451px !important;
-  }
-  .gmap_canvas{
-   
-    width: 449px !important;
+background-image: url(../../assets/imgs/login/bed.png);
+background-position: center center;
+background-size: cover;
+width: 100%;
+height: 408px;
+position: relative;
 }
-    }
-    
-    @media screen and (min-width:768px)and (max-width:992px) {
-      .count {
-        display: grid;
-    }
-        
-    }
-    @media screen and (min-width:500px)and (max-width:768px) {
-      .count {
-      display: grid;
-      }
-      .incub-info {
 
-      gap: 34px;
-      }
-      .incub-info p {
-      font-size: 20px;
-      width:460px;
-      }
-      .incub-info h3 {
-      width: fit-content;
-      }
-      .mapouter {
+.layer {
+position: absolute;
+inset: 0;
+background: linear-gradient(265.41deg, rgba(0, 255, 239, 0.31) 0%, rgba(1, 144, 154, 0.31) 100%);
+display: flex;
+align-items: center;
+justify-content: center;
 
-      width: 451px !important;
-      }
-      .gmap_canvas{
+h2 {
+width: 291px;
+height: 29px;
+left: 579px;
+top: 209px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 48px;
+color: #FFFFFF;
+}
+}
+.zrar {
+text-align: center;
+text-decoration: none;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 200px;
+height: 47px;
+background: linear-gradient(90deg, #00FFEF -49.62%, #01909A 100%);
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+font-weight: 600;
+font-size: 28px;
+line-height: 30px;
+margin: 30px 0px;
+border: transparent;
+}
+.mapp {
 
-      width: 449px !important;
-      } 
-    }
-    @media screen and (min-width:360px)and (max-width:499px) {
-      .count {
-        display: grid;
-        }
-        .incub-info {
-  
-        gap: 70px;
-        }
-        .incub-info p {
-          padding: 10px;
-        font-size: 16px;
-        width:345px;
-        }
-        .incub-info h3 {
-        width: fit-content;
-        }
-        .mapouter {
-  
-        width: 345px !important;
-        }
-        .gmap_canvas{
-  
-        width: 345px !important;
-        } 
-      .layer h2{
-        transform: translate(83px, 10px);
-      }
-    }
+margin-top: 40px;
+
+}
+.count{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+margin-bottom: 20px;
+}
+.heart {
+
+display: flex;
+justify-content: end;
+padding-bottom: 10px;
+i{
+margin: 2px;
+color: #A4A4A4;
+
+}
+.red{
+color: rgb(196, 41, 41);
+}
+}
+.caption{
+margin-top: 40px;
+}
+.incub-info{
+display: grid;
+gap: 3px;
+}
+.incub-info p{
+
+width: 602px;
+height: 363px;
+font-weight: 600;
+font-size: 22px;
+line-height: 33px;
+color: #A4A4A4;
+}
+.incub-info h3{
+
+width: 602px;  
+font-weight: 600;
+font-size: 35px;
+line-height: 33px;
+color: #01909A;
+}
+.location{
+font-family: Poppins;
+font-size: 22px;
+font-weight: 700;
+line-height: 33px;
+
+font-family: cursive;
+color: #fff;
+position: absolute;
+bottom: 6%;
+right: 4%;
+
+}
+@media screen and (min-width:992px) and (max-width:1250px) {
+.count {
+justify-content: flex-start;
+
+}
+.incub-info p {
+font-size: 20px;
+width:500px;
+}
+.incub-info h3 {
+width: fit-content;
+}
+.mapouter {
+
+width: 451px !important;
+}
+.gmap_canvas{
+
+width: 449px !important;
+}
+}
+
+@media screen and (min-width:768px)and (max-width:992px) {
+.count {
+display: grid;
+}
+
+}
+@media screen and (min-width:500px)and (max-width:768px) {
+.count {
+display: grid;
+}
+.incub-info {
+
+gap: 34px;
+}
+.incub-info p {
+font-size: 20px;
+width:460px;
+}
+.incub-info h3 {
+width: fit-content;
+}
+.mapouter {
+
+width: 451px !important;
+}
+.gmap_canvas{
+
+width: 449px !important;
+} 
+}
+@media screen and (min-width:360px)and (max-width:499px) {
+.count {
+display: grid;
+}
+.incub-info {
+
+gap: 70px;
+}
+.incub-info p {
+padding: 10px;
+font-size: 16px;
+width:345px;
+}
+.incub-info h3 {
+width: fit-content;
+}
+.mapouter {
+
+width: 345px !important;
+}
+.gmap_canvas{
+
+width: 345px !important;
+} 
+.layer h2{
+transform: translate(83px, 10px);
+}
+}

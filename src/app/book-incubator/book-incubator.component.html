@@ -85,13 +85,15 @@
         
                                 </div>
                             </div>
-                            <div >
+
+                             <!-- <div > 
                                 <input formControlName="bookerEmail" class="email"placeholder="Email" type="email">
                                 <div  *ngIf="BookForm.controls['bookerEmail'].errors&&BookForm.controls['bookerEmail'].touched "class="emailvalidtion">
                                     <p><span>*</span> Email is not valid </p>
                                 </div>
                                 
-                            </div>
+                             </div>  -->
+
                              <div class="imglayer">
                                 <input accept="image/*" id="img"  (change)="onchange($event)"  formControlName="prescriptionUrl" class="pass d-none"placeholder="" type="file">
                                 <label class="upimg text-center" for="img">
@@ -104,9 +106,9 @@
                                     <p > <span>*</span> Picture is required </p>
         
                                 </div>
-                            </div> 
+                             </div> 
                             
-                            <button [disabled]="BookForm.invalid" (click)="destroyBaseUrl()" class="btn">Book</button>
+                            <button [disabled]="BookForm.invalid"  class="btn">Add Baby</button>
                         </form>
                     </div>
                 </div>

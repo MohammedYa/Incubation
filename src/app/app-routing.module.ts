@@ -21,6 +21,7 @@ import { AuthGuard } from './auth.guard';
 import { DoctorsHomeComponent } from './doctors-home/doctors-home.component';
 import { BookingForIncComponent } from './booking-for-inc/booking-for-inc.component';
 import { BookingForPersonComponent } from './booking-for-person/booking-for-person.component';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/about',pathMatch:'full' },
@@ -39,9 +40,10 @@ const routes: Routes = [
   {path:'IncubatorHome',canActivate:[AuthGuard],component:IncubatorsComponent},
   {path:'personHome',canActivate:[AuthGuard],component:HomePersonComponent},
   {path:'incubation-page/:id',canActivate:[AuthGuard],component:IncubatorDetailsComponent},
-  {path:'book/:id',canActivate:[AuthGuard],component:BookIncubatorComponent},
+  {path:'book/:id',component:BookIncubatorComponent},
   {path:'BookInc',canActivate:[AuthGuard],component:BookingForIncComponent},
   {path:'BookPerson',canActivate:[AuthGuard],component:BookingForPersonComponent},
+  {path:'update',canActivate:[AuthGuard],component:UpdateComponent},
   {path:'available-bed',canActivate:[AuthGuard],component:AvilableBedComponent},
 
   {path:'**',component:NotfoundComponent}

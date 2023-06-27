@@ -32,6 +32,14 @@
                     </div>
                    
                     <div>
+                        <select formControlName="gevernorate" class="select ">
+
+                            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                          </select>
+                        
+                          
+                    </div>
+                    <div>
                         <input formControlName="city" class="pass"placeholder="City" type="text">
                         <div  *ngIf="RegisterPersonForm.controls['city'].errors&&RegisterPersonForm.controls['city'].touched " class="emailvalidtion">
                             <p *ngIf="RegisterPersonForm.controls['city'].errors['minlength']"> <span>*</span> city you must contain min length 3 </p>

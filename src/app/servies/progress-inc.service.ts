@@ -26,7 +26,13 @@ return this._HttpClient.put(`http://sayedazp-001-site1.gtempurl.com/api/Incubato
 }
 updateDoc(id:string,obj:any):Observable<any>{
   return this._HttpClient.put(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/UpdateDoctor?id=${id}`,obj)
-  }
+}
+updateInc(id:string,obj:any):Observable<any>{
+  return this._HttpClient.put(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/UpdateIncubator?id=${id}`,obj)
+}
+updateUser(id:string,obj:any):Observable<any>{
+  return this._HttpClient.put(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/UpdateUserDate?id=${id}`,obj)
+}
 
 
 }

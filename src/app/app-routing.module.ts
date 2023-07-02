@@ -22,6 +22,7 @@ import { DoctorsHomeComponent } from './doctors-home/doctors-home.component';
 import { BookingForIncComponent } from './booking-for-inc/booking-for-inc.component';
 import { BookingForPersonComponent } from './booking-for-person/booking-for-person.component';
 import { UpdateComponent } from './update/update.component';
+import { ChildComponent } from './child/child.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/about',pathMatch:'full' },
@@ -32,17 +33,25 @@ const routes: Routes = [
   {path:'code',component:CodeComponent},
   {path:'editPassword',component:EditPasswordComponent},
   {path:'recorrectPassword',component:CorrectPasswordComponent},
+
   {path:'personRegister',component:RegisterPersonComponent},
-  {path:'incubationRegister',component:RigesterIncubatorComponent},
-  {path:'doctorRegister/:id',canActivate:[AuthGuard],component:RigesterDoctorsComponent},
-  {path:'bedRegister/:id',canActivate:[AuthGuard],component:RigesterBedsComponent},
-  {path:'IncubatorDoctors',canActivate:[AuthGuard],component:DoctorsHomeComponent},
-  {path:'IncubatorHome',canActivate:[AuthGuard],component:IncubatorsComponent},
+  {path:'addCild/:id',component:BookIncubatorComponent},
+  {path:'BookPerson',canActivate:[AuthGuard],component:BookingForPersonComponent},
+  {path:'child',canActivate:[AuthGuard],component:ChildComponent},
   {path:'personHome',canActivate:[AuthGuard],component:HomePersonComponent},
   {path:'incubation-page/:id',canActivate:[AuthGuard],component:IncubatorDetailsComponent},
-  {path:'book/:id',component:BookIncubatorComponent},
   {path:'BookInc',canActivate:[AuthGuard],component:BookingForIncComponent},
-  {path:'BookPerson',canActivate:[AuthGuard],component:BookingForPersonComponent},
+
+  
+  {path:'incubationRegister',component:RigesterIncubatorComponent},
+  {path:'doctorRegister/:id',component:RigesterDoctorsComponent},
+  {path:'bedRegister/:id',component:RigesterBedsComponent},
+
+
+  {path:'IncubatorHome',canActivate:[AuthGuard],component:IncubatorsComponent},
+  {path:'IncubatorDoctors',canActivate:[AuthGuard],component:DoctorsHomeComponent},
+
+
   {path:'update',canActivate:[AuthGuard],component:UpdateComponent},
   {path:'available-bed',canActivate:[AuthGuard],component:AvilableBedComponent},
 

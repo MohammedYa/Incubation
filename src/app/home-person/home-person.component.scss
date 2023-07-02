@@ -40,7 +40,7 @@ section{
             }
             h4{
                 
-            width: 218px;
+            // width: 218px;
             height: 29px;
             margin-left: 10px;
             font-weight: 600;
@@ -68,18 +68,18 @@ section{
             }
         }
     }
-   h2{
-    
-margin-bottom: 20px;
+    h2,h3{
 
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-line-height: 48px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #01909A;
 
-color: #01909A;
-
+    }
+   h3{
+   font-size: 20px;
    }
 }
 a{
@@ -118,7 +118,11 @@ color: #00FFEF;
 color: #A4A4A4;
 opacity: 1; /* Firefox */
 }
-
+.tittle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
     
 @media screen and (min-width:992px) and (max-width:1200px) {
     section .near .item{

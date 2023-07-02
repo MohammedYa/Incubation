@@ -7,21 +7,29 @@ import { GetIncubatorService } from '../servies/get-incubator.service';
 })
 export class HomePersonComponent  implements OnInit{
 Incubators:any[]=[];
-city:string=''
+city:string=(JSON.parse(<string>localStorage.getItem("UserInfo"))).city
+name:string=''
   userToken:string=localStorage.getItem("UserToken")!
   getIncubators(){
 
     this._GetIncubatorService.getIncubator(this.userToken).subscribe((res)=>{
-      console.log(res)
      this.Incubators=res
     
 
     })
 
   }
+  NearIncubation(){
+    this._GetIncubatorService.getIncubatorByCity(this.city).subscribe(
+      (res)=>{
+        this.Incubators=res
+        console.log(res)
+      }
+    )
+  }
   constructor(private _GetIncubatorService:GetIncubatorService) {
-    this.getIncubators()
-    }
+    this.NearIncubation()
+  }
   ngOnInit(): void {
     
   }

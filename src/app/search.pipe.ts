@@ -5,10 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(Incubators:any,City:any):any[] {
+  transform(Incubators:any,name:any):any[] {
    
  return   Incubators.filter((Inc:any)=>{
-      return Inc.city.toLowerCase().includes(City.toLowerCase())
+      return Inc.name.toLowerCase().includes(name.toLowerCase())
     })
 
   }

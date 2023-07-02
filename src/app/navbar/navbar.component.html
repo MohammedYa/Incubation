@@ -12,6 +12,7 @@
         <ul class="links">
             <li ><a *ngIf="isLoggedIn &&canActiveteUser()" routerLink="/personHome"  routerLinkActive="active">Home</a></li>
             <li ><a *ngIf="isLoggedIn &&canActiveteUser()" routerLink="/BookPerson"  routerLinkActive="active">Booking</a></li>
+            <li ><a *ngIf="isLoggedIn &&canActiveteUser()" routerLink="/child"  routerLinkActive="active">Cildren</a></li>
             <li ><a *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/IncubatorHome"  routerLinkActive="active">Home</a></li>
             <li><a  *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/IncubatorDoctors"  routerLinkActive="active">Doctors</a></li>
             <li><a  *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/BookInc"  routerLinkActive="active">Booking</a></li>

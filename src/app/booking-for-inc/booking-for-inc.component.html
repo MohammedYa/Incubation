@@ -2,61 +2,54 @@
 
 
   <section class="">
-    <div class="count" *ngFor="let book of Booking">
-      <div class="info">
-        <img src="../../assets/imgs/home/4.jpg" alt="">
-        <div class="name">
-          <h2 class="h3">{{book.childName}}</h2>
-
-          <p>{{book.dateofBooking}}</p>
+    <div *ngFor="let book of Booking" class="count" >
+    
+      <div class="pop">
+        <div class="pic">
+          <img src="../../assets/imgs/home/4.jpg" alt="">
+          <div class="nameOfcild">
+            <h3>{{book.childName}}</h3>
+            <p>Age : {{book.age}} days</p>
+  
+          </div>
         </div>
-        <a (click)="reqest(book.id)" id="requst">see request</a>
+        <div class="countain">
+          <div class="left">
+  
+            <div class="mather">
+             
+              <h4>mather Name</h4> 
+              <h3> {{book.motherName}}</h3>
+            </div>
+            <div class="mather">
+             
+                <h4>Tybe of illness</h4> 
+                <h3>{{book.typeofIllness}}</h3>
+              </div>
+           
+  
+          </div>
+          <div class="right">
+            <div class="phone">
+                <h4>Phone Number</h4>
+                <h3>{{book.phoneNumber}}</h3>
+              </div>
+    
+            <div class="phone">
+              <h4>Dr Phone Number</h4>
+              <h3>{{book.phoneNumberofDoctor}}</h3>
+            </div>
+  
+          </div>
+        </div>
+        <div class="btns">
+          <button (click)="deleteBooking(book.id)" class="decline">Decline</button>
+          <button class="accept">Accept</button>
+        </div> 
       </div>
+  
     </div>
+   
 
   </section>
-  <div id="layer" class="layer">
-    <div class="pop">
-      <div class="pic">
-        <img src="../../assets/imgs/home/4.jpg" alt="">
-        <div class="nameOfcild">
-          <h3>Mark Jon</h3>
-          <p>3days</p>
-
-        </div>
-      </div>
-      <div class="countain">
-        <div class="left">
-
-          <div class="mather">
-           
-            <h4>mather Name</h4> 
-            <h3>Nina Adam</h3>
-          </div>
-          <div class="phone">
-            <h4>Phone Number</h4>
-            <h3>01000000000</h3>
-          </div>
-
-        </div>
-        <div class="right">
-          <div class="mather">
-           
-            <h4>Tybe of illness</h4> 
-            <h3>Bradycardia</h3>
-          </div>
-          <div class="phone">
-            <h4>Dr Phone Number</h4>
-            <h3>01000000000</h3>
-          </div>
-
-        </div>
-      </div>
-      <div class="btns">
-        <button class="decline">Decline</button>
-        <button class="accept">Accept</button>
-      </div>
-      <i id="close" class="fa-solid fa-xmark fa-lg close" style="color: #5c6066;"></i>
-    </div>
-  </div>
-</div>  
+ </div>

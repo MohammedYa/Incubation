@@ -32,10 +32,14 @@
 
 
             <div class="scerch">
-                <input  class="email"placeholder="Search For Incubation By city" [(ngModel)]="city" type="email">
+                <input  class="email"placeholder="Search For Incubation By Name" [(ngModel)]="name" type="email">
             </div>
-            <h2>Nearest  Incubation</h2>
-            <div class="item" *ngFor="let Icubator of Incubators|search:city">
+            <div class="tittle">
+                <h2 (click)="NearIncubation()">Nearest  Incubation</h2>
+                <h3 (click)="getIncubators()">View All</h3>
+
+            </div>
+            <div class="item" *ngFor="let Icubator of Incubators|search:name">
                 <a [routerLink]="['/incubation-page',Icubator.id]">
                   <img src="../../assets/imgs/home/cover.png" class="img" alt=""> 
                 <div class="title">

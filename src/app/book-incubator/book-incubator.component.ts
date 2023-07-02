@@ -15,6 +15,8 @@ Id:number=this._ActivatedRoute.snapshot.params['id']
 id:string=`${this.Id}`
 imgsrc:string="assets/imgs/home/uploade 1.svg"
 url:string=''
+userInfo:string=<string>localStorage.getItem("UserToken")!
+
 // BaseUrl:string=
 
   BookForm:FormGroup=new FormGroup({
@@ -31,11 +33,16 @@ url:string=''
 supmitRegisterIncubation(BookForm:FormGroup){
      
 
-
       this._BookProgressService.addBaby(BookForm.value).subscribe(
         (res)=>{
+
           if(res.isSuccess){
+            if(this.userInfo!="null")
+            this._Router.navigate(['/child'])
+          }
+          else{
             this._Router.navigate(['/login'])
+
           }
         }
       )

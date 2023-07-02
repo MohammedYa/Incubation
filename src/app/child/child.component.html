@@ -1,0 +1,59 @@
+<div class="page">
+
+
+    <section class="">
+        <div class="headerDoc">
+            <h3 class="">Children</h3>
+            <i [routerLink]="['/addCild',personId]" class="fa-solid fa-plus " ></i>
+        </div>
+        <div class="count" *ngFor="let child of children">
+         
+            <div class="pop">
+                <div class="pic">
+                  <img src="../../assets/imgs/home/4.jpg" alt="">
+                  <div class="nameOfcild">
+                    <h3>{{child.childName}}</h3>
+                    <p>{{child.age}}</p>
+          
+                  </div>
+                </div>
+                <div class="countain">
+                  <div class="left">
+          
+                    <div class="mather">
+                     
+                      <h4>mather Name</h4> 
+                      <h3>{{child.motherName}}</h3>
+                    </div>
+                    <div class="mather">
+                     
+                        <h4>Tybe of illness</h4> 
+                        <h3>{{child.typeofIllness}}</h3>
+                      </div>
+                   
+          
+                  </div>
+                  <div class="right">
+                    <div class="phone">
+                        <h4>Phone Number</h4>
+                        <h3>{{child.phoneNumber}}</h3>
+                      </div>
+            
+                    <div class="phone">
+                      <h4>Dr Phone Number</h4>
+                      <h3>{{child.phoneNumberofDoctor}}</h3>
+                    </div>
+          
+                  </div>
+                </div>
+              
+              </div>
+          
+              
+        </div>
+      
+         
+                      
+    </section>
+   
+  </div>  

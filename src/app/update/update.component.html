@@ -30,7 +30,15 @@
 
                         </div>
                     </div>
-                   
+                    
+                    <div *ngIf="isInc">
+                        <select formControlName="gevernorate" class="select ">
+
+                            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                          </select>
+                        
+                          
+                    </div>
                     <div>
                         <input formControlName="city" class="pass"placeholder="City" type="text">
                         <div  *ngIf="UpdateForm.controls['city'].errors&&UpdateForm.controls['city'].touched " class="emailvalidtion">
@@ -52,6 +60,7 @@
                     
                    
                     <button [disabled]="UpdateForm.invalid" class="btn">update</button>
+                    <h3 *ngIf="succse" class="sucss " >Update successfully You You must re-register again </h3>
                 </form>
             </div>
         </div>

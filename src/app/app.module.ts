@@ -28,6 +28,7 @@ import { BookingForIncComponent } from './booking-for-inc/booking-for-inc.compon
 import { BookingForPersonComponent } from './booking-for-person/booking-for-person.component';
 import { SearchPipe } from './search.pipe';
 import { UpdateComponent } from './update/update.component';
+import { ChildComponent } from './child/child.component';
 @NgModule({
   declarations: [
       AppComponent,
@@ -54,7 +55,8 @@ import { UpdateComponent } from './update/update.component';
       BookingForIncComponent,
       BookingForPersonComponent,
       SearchPipe,
-      UpdateComponent
+      UpdateComponent,
+      ChildComponent
   ],
   imports: [
     HttpClientModule,

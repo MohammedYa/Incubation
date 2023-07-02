@@ -30,7 +30,7 @@ export class RegisterPersonComponent implements OnInit {
       
     (res)=>{
    
-      this._Router.navigate(['/book',res.id])
+      this._Router.navigate(['/addCild',res.id])
       console.log(res)
     }
     ,

@@ -58,7 +58,6 @@ this._RegisterService.registerBed(Bed).subscribe(
 }
 getBed(){
 this._GetIncubatorService.getIncurBed(this.IncToken).subscribe((res)=>{
-console.log(res)
 this.beds=res
 })
 }

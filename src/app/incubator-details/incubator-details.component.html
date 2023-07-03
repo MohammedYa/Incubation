@@ -32,15 +32,30 @@
         
       </div>
       <div  class="book">
-        <h3>Choose the appropriate bed for reservation </h3>
+        <h3>Choose the appropriate bed and Name of Your Child for reservation </h3>
          <div (click)="chooseBed(bed.id)" *ngFor="let bed of beds" class="item">
           <h4>{{bed.typeofBed}}</h4>
           <p>{{bed.condition}}</p>
           <h5>{{bed.costPerDay}} E.L Per Day</h5>
          </div> 
-       
-         
-       <input [disabled]="!statusbook" type="button" (click)="createBook(Incubator.id)" class="zrar" value="Book">
+       <form  [formGroup]="ChildNameForm">
+            <div>
+            <select formControlName="childrenOfName"  class="select ">
+            <option  [value]="">select Child</option>
+            <option *ngFor="let child of children" [value]="child.childName">{{ child.childName }}</option>
+            </select>
+
+
+            </div>
+            <h3 *ngIf="succse" class="sucss " >The request has been sent successfully</h3>
+            <h3 *ngIf="fail" class="fail " >You must select the child to book for</h3>
+            <input [disabled]="!statusbook" type="button" (click)="createBook(Incubator.id,ChildNameForm)" class="zrar" value="Book">
+
+
+       </form>
+        
+
+     
       </div>
     </div>
   </section>

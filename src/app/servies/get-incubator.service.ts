@@ -41,11 +41,11 @@ export class GetIncubatorService {
     const url ="http://sayedazp-001-site1.gtempurl.com/api/Incubator/GetBooking";
     return this.httpClient.get(url, { headers });
   }
-  getUserBooking(yourAccessToken:string): Observable<any> {
-    const headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + yourAccessToken
-    });
-    return this.httpClient.get(`http://sayedazp-001-site1.gtempurl.com/api/Incubator/GetBooking`,{headers:headers});
+  getUserBooking(): Observable<any> {
+    const token = localStorage.getItem("UserToken"); // Replace 'your_token' with the actual token value
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url ="http://sayedazp-001-site1.gtempurl.com/api/Incubator/GetBookingofUser";
+    return this.httpClient.get(url, { headers });
   }
   getUserChild(yourAccessToken:string): Observable<any> {
     const headers = new HttpHeaders({

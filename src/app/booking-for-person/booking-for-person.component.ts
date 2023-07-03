@@ -8,13 +8,11 @@ import { GetIncubatorService } from '../servies/get-incubator.service';
 })
 export class BookingForPersonComponent implements OnInit {
   Booking:any=[]
-  UserToken:string=localStorage.getItem("UserToken")!
-
-
+ 
   getBooking(){
-    this._GetIncubatorService.getUserBooking(this.UserToken).subscribe((res)=>{
+    this._GetIncubatorService.getUserBooking().subscribe((res)=>{
       this.Booking=res
-      console.log(res)})
+    })
   }
 
 

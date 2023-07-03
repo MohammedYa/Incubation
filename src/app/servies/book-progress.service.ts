@@ -11,10 +11,10 @@ export class BookProgressService {
 
   
   
-  bookIncubator(obj: any ): Observable<any> {
+  bookIncubator(childId:number,obj: any ): Observable<any> {
   const token = localStorage.getItem("UserToken"); // Replace 'your_token' with the actual token value
   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  const url =`http://sayedazp-001-site1.gtempurl.com/api/Incubator/CreateBooking?id=${obj.userDateId}`;
+  const url =`http://sayedazp-001-site1.gtempurl.com/api/Incubator/CreateBooking?id=${childId}`;
 
   return this._HttpClient.post(url, obj, { headers });
 }

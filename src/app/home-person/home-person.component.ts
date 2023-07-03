@@ -23,7 +23,6 @@ name:string=''
     this._GetIncubatorService.getIncubatorByCity(this.city).subscribe(
       (res)=>{
         this.Incubators=res
-        console.log(res)
       }
     )
   }

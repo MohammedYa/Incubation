@@ -17,7 +17,6 @@
             <li><a  *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/IncubatorDoctors"  routerLinkActive="active">Doctors</a></li>
             <li><a  *ngIf="isLoggedIn &&canActiveteInc()"routerLink="/BookInc"  routerLinkActive="active">Booking</a></li>
             <li><a routerLink="/about"  routerLinkActive="active">About</a></li>
-            <li><a routerLink="/contact"  routerLinkActive="active">contact</a></li>
 
            
         </ul>
@@ -54,85 +53,3 @@
 
 
 
-
- <!-- model
-<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">UpDate Doctor</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-0">
-            <div class="doctors mt-5">
-    
-    
-    
-                <div class="fields">
-    
-                    <div class="forms">
-                        <form [formGroup]="updateIncubationForm" (ngSubmit)="updateIncForm(updateIncubationForm)">
-                            
-                            <div  id="doctors" >
-    
-    
-                                <div  class="collection">
-    
-    
-                                    <div id="info" class="infoDoctor">
-    
-    
-                                        <div>
-                                            <input id="name" formControlName="name" class="name" placeholder=" Name" type="text">
-                                            <div  *ngIf="updateIncubationForm.controls['name'].errors&&updateIncubationForm.controls['name'].touched " class="emailvalidtion">
-                                                <p *ngIf="updateIncubationForm.controls['name'].errors['minlength']"> <span>*</span> FullName you must contain min length 3 </p>
-                                                <p *ngIf="updateIncubationForm.controls['name'].errors['required']"> <span>*</span> FullName is required </p>
-                                                <p  *ngIf="updateIncubationForm.controls['name'].errors['maxlength']"><span>*</span> FullName you must contain Max length 20  </p>
-                    
-                                            </div>
-                                        </div>
-    
-    
-                                        <div>
-                                            <input id="number" formControlName="phoneNumber" class="email" placeholder="Number"
-                                                type="text">
-                                                <div   *ngIf="updateIncubationForm.controls['phoneNumber'].errors&&updateIncubationForm.controls['phoneNumber'].touched " class="emailvalidtion">
-                                                    <p *ngIf="updateIncubationForm.controls['phoneNumber'].errors['required']"> <span>*</span> Phone is required </p>
-                                                    <p *ngIf="updateIncubationForm.controls['phoneNumber'].errors['pattern']"><span>*</span>phone is not valid   </p>
-                        
-                                                </div>
-                                        </div>
-    
-                                        <div>
-                                            <input id="Specialization" formControlName="specialization" class="pass"
-                                                placeholder="specialization" type="text">
-                                                <div *ngIf="updateIncubationForm.controls['specialization'].errors&&updateIncubationForm.controls['specialization'].touched " class="emailvalidtion">
-                                                    <p *ngIf="updateIncubationForm.controls['specialization'].errors['minlength']"> <span>*</span> specialization you must contain min length 3 </p>
-                                                    <p *ngIf="updateIncubationForm.controls['specialization'].errors['required']"> <span>*</span> specialization is required </p>
-                                                    <p *ngIf="updateIncubationForm.controls['specialization'].errors['maxlength']"><span>*</span> specialization you must contain Max length 20  </p>
-                        
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button [disabled]="updateIncubationForm.invalid" class="btn">Update</button>
-                                </div>
-                        </form>
-                    </div>
-    
-    
-                </div>
-    
-    
-    
-            </div>
-    
-        </div>
-        
-        </div>
-    </div>
-</div> -->

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthPersonService } from '../servies/auth-person.service';
 import { Router } from '@angular/router';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
-declare var $:any
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -17,7 +16,20 @@ export class NavbarComponent implements OnInit{
   isInc=false
   UserData:any;
   TypeOfUser:string=''
-  constructor(private _AuthPersonService:AuthPersonService,private _Router:Router) {}
+  getUser(){
+   let user= this._AuthPersonService.userInfo.subscribe(
+    (res)=>{
+      this.userEmail=res.email
+      this.userCity=res.city
+      this.userName=res.displayName
+ 
+       
+    }
+   )
+  }
+  constructor(private _AuthPersonService:AuthPersonService,private _Router:Router) {
+    this.getUser()
+  }
   
   LogOut(): void{
     
@@ -70,42 +82,12 @@ export class NavbarComponent implements OnInit{
     )
   
 
-  //   $("#list").slideUp(0)
-  // $('#list-icon').on('click', function(){
    
-  //   $("#list").slideToggle(1000)
-  //   })
-  // $("#list-icon").on( "click", function() {
-  //       $("#list"). slideToggle(1000);
-  //     })
-  
-  //   $(window).ready(function() {
-  //     $(window).resize(function() {
-  //       let windowsize = $(window).width();
-  //       if (windowsize >= 360 && windowsize < 992) {
-  //             $("#list").slideDown();
-
-  //       }
-  //       else{
-  //             $("#list").slideUp();
-
-  //       }
-  //     });});
-    
     
 }
 
 
 
-updateIncubationForm:FormGroup=new FormGroup({
-  'displayName':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
-  'phoneNumber':new FormControl(null,[Validators.required,Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/)]),
-  'city':new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
-  'email':new FormControl(null,[Validators.required,Validators.email]),
-  'password':new FormControl(null,[Validators.required,Validators.pattern(/^[A-Za-z0-9]{8,}$/)]),
-  "gevernorate":new FormControl("Cairo")
-})
-updateIncForm(updateIncForm:FormGroup){
 
-}
+
 }

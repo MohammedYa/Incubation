@@ -56,7 +56,8 @@ import { ChildComponent } from './child/child.component';
       BookingForPersonComponent,
       SearchPipe,
       UpdateComponent,
-      ChildComponent
+      ChildComponent,
+      
   ],
   imports: [
     HttpClientModule,
